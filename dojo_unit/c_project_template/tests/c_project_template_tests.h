@@ -9,3 +9,4 @@ void test_that_passes();
 void test_that_fails();
 void test_that_pends();
 #endif /* __C_PROJECT_TEMPLATE_TESTS_H__ */
+

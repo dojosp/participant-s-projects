@@ -8,7 +8,7 @@ CODE_OBJS += \
 # Each subdirectory must supply rules for building sources it contributes
 $(SRC_DIR)/%.o: $(BIN_DIR) ../$(SRC_DIR)/%.c
 	@echo 'Building file: $<'
-	$(CC) $(CFLAGS) "$<" -o $(BIN_DIR)/"$@" 
+	$(CC) $(CFLAGS) ../$(SRC_DIR)/%.c -o $(BIN_DIR)/"$@" 
 	@echo 'Finished building: $<'
 	@echo ' '
 

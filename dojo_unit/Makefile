@@ -3,8 +3,8 @@
 ################################################################################
 
 # All of the sources participating in the build are defined here
--include sources.mk
 -include objects.mk
+-include sources.mk
 -include tests/subdir.mk
 -include src/subdir.mk
 
@@ -35,7 +35,10 @@ $(TESTS_DIR)/$(PROJECT)_tests_main.c: $(TESTS_DIR)/$(PROJECT)_tests.h
 	@echo ' '
 
 $(BIN_DIR):
-	mkdir -p $(BIN_DIR)
+	mkdir -p $@
+
+$(TEMPLATE)/lib:
+	mkdir -p $@
 
 # Other Targets
 clean:

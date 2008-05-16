@@ -38,3 +38,4 @@ void tear_down() {
 	/* Add code to be run after every test here or remove this function if useless */
 	free(example);
 }
+

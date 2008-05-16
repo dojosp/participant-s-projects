@@ -7,4 +7,4 @@ void test_assert_same_ints();
 void test_assert_same_doubles();
 void test_assert_equals();
 void test_assert_null();
-#endif /* __DOJO_UNIT_TESTS_H */
+#endif /* __DOJO_UNIT_TESTS_H__ */

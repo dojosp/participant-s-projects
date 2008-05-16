@@ -1,0 +1,54 @@
+#!/usr/bin/env ruby
+
+test_name_pattern = /void[[:space:]]+(test_[a-zA-Z0-9_]*)[[:space:]]*\(\)\;[[:space:]]*/
+set_up_pattern = /void[[:space:]]+set_up[[:space:]]*\(\)\;[[:space:]]*/
+tear_down_pattern = /void[[:space:]]+tear_down[[:space:]]*\(\)\;[[:space:]]*/
+
+header_filename = $*[0] + ".h"
+output_name = $*[0]+"_main.c"
+
+def find_tests(filename, test, set_up, tear_down)
+	has_set_up = false
+	has_tear_down = false
+	tests = []
+	
+	File.open(filename, "r") do |infile|		while (line = infile.gets) do			if line=~test then
+				tests << $1
+			elsif line=~set_up then
+				has_set_up = true
+			elsif line=~tear_down then
+				has_tear_down = true
+			end		end	end
+	
+	[has_set_up, has_tear_down, tests]
+end
+
+def print_main(output_name, filename, has_set_up, has_tear_down, tests)
+	output = File.new(output_name,'w')
+	
+	output.puts '#include "'+filename+'"'
+	output.puts ""
+	output.puts "int main() {"
+
+	tests.each do |test|
+		print_test(output, has_set_up, has_tear_down, test)	
+	end
+	
+	output.puts ""
+	output.puts "\t__print_tests_summary("+tests.size.to_s+"); return 0;"
+	output.puts "}"
+	
+	output.close
+end
+
+def print_test(output, has_set_up, has_tear_down, test)
+	output.puts("")
+	output.puts("\tset_up();") if has_set_up
+	output.puts("\t"+test+"();")
+	output.puts("\ttear_down();") if has_tear_down
+end
+
+test_file_config = find_tests(header_filename,
+	test_name_pattern, set_up_pattern, tear_down_pattern)
+print_main(output_name, header_filename,
+	test_file_config[0], test_file_config[1], test_file_config[2])

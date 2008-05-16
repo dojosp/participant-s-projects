@@ -11,7 +11,7 @@ LFLAGS += \
 
 # Each subdirectory must supply rules for building sources it contributes
 $(TESTS_DIR)/%.o: $(BIN_DIR) ../$(TESTS_DIR)/%.c
-	@echo 'Building file: $<'
+	@echo 'Building file: $@'
 	$(CC) $(CFLAGS) -o $(BIN_DIR)/"$@" "$<"
-	@echo 'Finished building: $<'
+	@echo 'Finished building: $@'
 	@echo ' '

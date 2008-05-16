@@ -1,7 +1,3 @@
-################################################################################
-#      DO NOT MODIFY THIS FILE UNLESS YOU ARE SURE OF WHAT YOU ARE DOING       #
-################################################################################
-
 # All of the sources participating in the build are defined here
 -include objects.mk
 -include sources.mk
@@ -11,9 +7,13 @@
 all: run_tests copy_template
 
 run: $(BIN_DIR) $(PROJECT)
+	@echo 'Running project executable'
+	@echo ' '
 	./$(BIN_DIR)/$(PROJECT)
 
 run_tests: $(BIN_DIR) $(PROJECT)_tests
+	@echo 'Running project tests executable'
+	@echo ' '
 	clear && ./$(BIN_DIR)/$(PROJECT)_tests
 
 # Tool invocations
@@ -35,21 +35,48 @@ $(TESTS_DIR)/$(PROJECT)_tests_main.c: $(TESTS_DIR)/$(PROJECT)_tests.h
 	@echo ' '
 
 $(BIN_DIR):
+	@echo 'Generating $@ folder'
 	mkdir -p $@
+	@echo ' '
 
 $(TEMPLATE)/lib:
+	@echo 'Generating $@ folder'
 	mkdir -p $@
+	@echo ' '
 
 # Other Targets
 clean:
+	@echo 'Cleaning folders'
 	-$(RM) $(CODE_OBJS) $(TESTS_OBJS) $(EXECUTABLES) $(TESTS_DIR)/$(PROJECT)_tests_main.c $(PROJECT) $(PROJECT)_tests $(BIN_DIR) $(LIB_DIR)/$(TESTS_LIB) $(TEMPLATE)/lib/*dojo_unit*
-	-@echo ' '
+	@echo ' '
 
 copy_template: generate_main_tests $(LIB_DIR)/$(TESTS_LIB) $(SRC_DIR)/$(PROJECT).h
-	cp generate_main_tests $(TEMPLATE)/ && cp $(LIB_DIR)/$(TESTS_LIB) $(SRC_DIR)/$(PROJECT).h
+	@echo 'Copying files and libs to template folder'
+	cp generate_main_tests $(TEMPLATE)/
+	cp $(LIB_DIR)/$(TESTS_LIB) $(SRC_DIR)/$(PROJECT).h $(TEMPLATE)/lib/
+	@echo ' '
 
 .PHONY: all clean
 .SECONDARY:
 
 $(LIB_DIR)/$(TESTS_LIB): $(SRC_DIR)/$(PROJECT).o
-	$(CC) -dynamiclib -undefined dynamic_lookup -single_module $< -o $@ && cp $(SRC_DIR)/$(PROJECT).h $(LIB_DIR)/$(TESTS_LIB) c_project_template/lib/
+	@echo 'Compiling OS X Dojo Unit Library'
+	$(CC) -dynamiclib -undefined dynamic_lookup -single_module $< -o $@
+	@echo 'Copying header and generate library to template folder'
+	cp $(SRC_DIR)/$(PROJECT).h $(LIB_DIR)/$(TESTS_LIB) c_project_template/lib/
+	@echo ' '
+
+zip: clean ../$(PROJECT) $(BIN_DIR)
+	@echo 'Generating $@ file for $(PROJECT)'
+	cd .. && zip -r $(PROJECT)/$(BIN_DIR)/$(PROJECT).zip $(PROJECT)
+	@echo ' '
+
+tar: clean ../$(PROJECT) $(BIN_DIR)
+	@echo 'Generating $@ file for $(PROJECT)'
+	cd .. && tar -cf $(PROJECT)/$(BIN_DIR)/$(PROJECT).tar $(PROJECT)
+	@echo ' '
+	
+targz: tar
+	@echo 'Generating $@ file for $(PROJECT)'
+	gzip $(PROJECT)/$(BIN_DIR)/$(PROJECT).tar
+	@echo ' '

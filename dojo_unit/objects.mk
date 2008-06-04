@@ -12,8 +12,8 @@ LFLAGS := -Wall -pedantic
 CFLAGS := -Wall -pedantic $(DEBUG)
 RM := rm -rf
 
-TESTS_LIB := libdojo_unit.dylib
-
 LIBS :=
 
 USER_OBJS :=
+
+OS_NAME := $(shell uname -s)

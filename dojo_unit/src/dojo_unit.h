@@ -58,5 +58,5 @@ boolean __assert_equals(const void*, const void*, const int, const int);
 boolean __assert_equals_cmp(void*, void*, const int *(func)(void*, void*));
 void __increase_error_count();
 void __increase_pending_count();
-int print_summary(int);
+int __print_tests_summary(int);
 #endif /* __DOJO_UNIT_H__ */

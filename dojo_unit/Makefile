@@ -1,10 +1,11 @@
 # All of the sources participating in the build are defined here
+all: run_tests copy_template
+
 -include objects.mk
 -include sources.mk
 -include tests/subdir.mk
 -include src/subdir.mk
-
-all: run_tests copy_template
+-include $(OS_NAME).mk
 
 run: $(BIN_DIR) $(PROJECT)
 	@echo 'Running project executable'
@@ -39,6 +40,11 @@ $(BIN_DIR):
 	mkdir -p $@
 	@echo ' '
 
+$(LIB_DIR):
+	@echo 'Generating $@ folder'
+	mkdir -p $@
+	@echo ' '
+
 $(TEMPLATE)/lib:
 	@echo 'Generating $@ folder'
 	mkdir -p $@
@@ -52,19 +58,12 @@ clean:
 
 copy_template: $(SCRIPT_DIR) $(LIB_DIR)/$(TESTS_LIB) $(SRC_DIR)/$(PROJECT).h
 	@echo 'Copying files and libs to template folder'
-	cp -r $(SCRIPT_DIR)/ $(TEMPLATE)/$(SCRIPT_DIR)/
+	cp $(SCRIPT_DIR)/generate_main_tests $(TEMPLATE)/$(SCRIPT_DIR)/
 	cp $(LIB_DIR)/$(TESTS_LIB) $(SRC_DIR)/$(PROJECT).h $(TEMPLATE)/lib/
 	@echo ' '
 
 .PHONY: all clean
 .SECONDARY:
-
-$(LIB_DIR)/$(TESTS_LIB): $(SRC_DIR)/$(PROJECT).o
-	@echo 'Compiling OS X Dojo Unit Library'
-	$(CC) -dynamiclib -undefined dynamic_lookup -single_module $< -o $@
-	@echo 'Copying header and generate library to template folder'
-	cp $(SRC_DIR)/$(PROJECT).h $(LIB_DIR)/$(TESTS_LIB) c_project_template/lib/
-	@echo ' '
 
 zip: clean ../$(PROJECT) $(BIN_DIR)
 	@echo 'Generating $@ file for $(PROJECT)'

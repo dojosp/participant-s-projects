@@ -36,4 +36,3 @@ void test_assert_null() {
   assert_null("NULL is not null", NULL);
   assert_not_null("\"a\" is null", a);
 }
-

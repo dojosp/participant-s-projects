@@ -1,14 +1,13 @@
 ################################################################################
 #      DO NOT MODIFY THIS FILE UNLESS YOU ARE SURE OF WHAT YOU ARE DOING       #
 ################################################################################
+all: run_tests
 
 # All of the sources participating in the build are defined here
 -include objects.mk
 -include sources.mk
 -include tests/subdir.mk
 -include src/subdir.mk
-
-all: run_tests
 
 run: $(BIN_DIR) $(PROJECT)
 	@echo 'Running project executable'

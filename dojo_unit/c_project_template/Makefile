@@ -35,7 +35,7 @@ $(PROJECT)_tests: $(BIN_DIR) $(CODE_OBJS) $(TESTS_OBJS) $(LIB_DIR)/$(TESTS_LIB)
 	
 $(TESTS_DIR)/$(PROJECT)_tests_main.c: $(TESTS_DIR)/$(PROJECT)_tests.h
 	@echo 'Generating file: $@'
-	cd $(TESTS_DIR) && ../generate_main_tests $(PROJECT)_tests
+	cd $(TESTS_DIR) && ../$(SCRIPT_DIR)/generate_main_tests $(PROJECT)_tests
 	@echo ' '
 
 $(BIN_DIR):
@@ -69,5 +69,5 @@ tar: clean ../$(PROJECT) $(BIN_DIR)
 	
 targz: tar
 	@echo 'Generating $@ file for $(PROJECT)'
-	gzip $(PROJECT)/$(BIN_DIR)/$(PROJECT).tar
+	gzip $(BIN_DIR)/$(PROJECT).tar
 	@echo ' '

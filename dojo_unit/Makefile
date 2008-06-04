@@ -31,7 +31,7 @@ $(PROJECT)_tests: $(BIN_DIR) $(CODE_OBJS) $(TESTS_OBJS) $(LIB_DIR)/$(TESTS_LIB)
 	
 $(TESTS_DIR)/$(PROJECT)_tests_main.c: $(TESTS_DIR)/$(PROJECT)_tests.h
 	@echo 'Generating file: $<'
-	cd $(TESTS_DIR) && ../generate_main_tests $(PROJECT)_tests
+	cd $(TESTS_DIR) && ../$(SCRIPT_DIR)/generate_main_tests $(PROJECT)_tests
 	@echo ' '
 
 $(BIN_DIR):
@@ -50,9 +50,9 @@ clean:
 	-$(RM) $(CODE_OBJS) $(TESTS_OBJS) $(EXECUTABLES) $(TESTS_DIR)/$(PROJECT)_tests_main.c $(PROJECT) $(PROJECT)_tests $(BIN_DIR) $(LIB_DIR)/$(TESTS_LIB) $(TEMPLATE)/lib/*dojo_unit*
 	@echo ' '
 
-copy_template: generate_main_tests $(LIB_DIR)/$(TESTS_LIB) $(SRC_DIR)/$(PROJECT).h
+copy_template: $(SCRIPT_DIR) $(LIB_DIR)/$(TESTS_LIB) $(SRC_DIR)/$(PROJECT).h
 	@echo 'Copying files and libs to template folder'
-	cp generate_main_tests $(TEMPLATE)/
+	cp -r $(SCRIPT_DIR)/ $(TEMPLATE)/$(SCRIPT_DIR)/
 	cp $(LIB_DIR)/$(TESTS_LIB) $(SRC_DIR)/$(PROJECT).h $(TEMPLATE)/lib/
 	@echo ' '
 
@@ -78,5 +78,5 @@ tar: clean ../$(PROJECT) $(BIN_DIR)
 	
 targz: tar
 	@echo 'Generating $@ file for $(PROJECT)'
-	gzip $(PROJECT)/$(BIN_DIR)/$(PROJECT).tar
+	gzip $(BIN_DIR)/$(PROJECT).tar
 	@echo ' '

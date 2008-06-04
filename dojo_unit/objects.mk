@@ -5,6 +5,7 @@ SRC_DIR := src
 TESTS_DIR := tests
 LIB_DIR := lib
 BIN_DIR := bin
+SCRIPT_DIR := scripts
 
 CC := gcc
 LFLAGS := -Wall -pedantic

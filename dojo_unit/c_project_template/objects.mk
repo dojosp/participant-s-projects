@@ -7,8 +7,8 @@ BIN_DIR := bin
 SCRIPT_DIR := scripts
 
 CC := gcc
-LFLAGS := -Wall -pedantic
-CFLAGS := -Wall -pedantic -c $(DEBUG)
+LFLAGS := -Wall -ansi -pedantic
+CFLAGS := -Wall -ansi -pedantic -c $(DEBUG)
 RM := rm -rf
 
 TESTS_LIB := libdojo_unit.dylib

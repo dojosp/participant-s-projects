@@ -53,7 +53,7 @@ $(TEMPLATE)/lib:
 # Other Targets
 clean:
 	@echo 'Cleaning folders'
-	-$(RM) $(CODE_OBJS) $(TESTS_OBJS) $(EXECUTABLES) $(TESTS_DIR)/$(PROJECT)_tests_main.c $(PROJECT) $(PROJECT)_tests $(BIN_DIR) $(LIB_DIR)/$(TESTS_LIB) $(TEMPLATE)/lib/*dojo_unit*
+	-$(RM) $(CODE_OBJS) $(TESTS_OBJS) $(EXECUTABLES) $(TESTS_DIR)/$(PROJECT)_tests_main.c $(PROJECT) $(PROJECT)_tests $(BIN_DIR) $(LIB_DIR)/$(TESTS_LIB) $(TEMPLATE)/lib/*dojo_unit* */.DS_Store
 	@echo ' '
 
 copy_template: $(SCRIPT_DIR) $(LIB_DIR)/$(TESTS_LIB) $(SRC_DIR)/$(PROJECT).h
@@ -67,12 +67,12 @@ copy_template: $(SCRIPT_DIR) $(LIB_DIR)/$(TESTS_LIB) $(SRC_DIR)/$(PROJECT).h
 
 zip: clean ../$(PROJECT) $(BIN_DIR)
 	@echo 'Generating $@ file for $(PROJECT)'
-	cd .. && zip -r $(PROJECT)/$(BIN_DIR)/$(PROJECT).zip $(PROJECT)
+	cd .. && zip -r $(PROJECT)/$(BIN_DIR)/$(PROJECT).zip $(PROJECT) -x $(PROJECT)/$(LIB_DIR)/$(TESTS_LIB)
 	@echo ' '
 
 tar: clean ../$(PROJECT) $(BIN_DIR)
 	@echo 'Generating $@ file for $(PROJECT)'
-	cd .. && tar -cf $(PROJECT)/$(BIN_DIR)/$(PROJECT).tar $(PROJECT)
+	cd .. && tar -cf $(PROJECT)/$(BIN_DIR)/$(PROJECT).tar $(PROJECT) -X $(PROJECT)/$(LIB_DIR)/$(TESTS_LIB)
 	@echo ' '
 	
 targz: tar

@@ -31,7 +31,7 @@ typedef char boolean;
 #endif
 
 #ifndef assert_same
-#define assert_same(MSG,A,B) assert_true(MSG,__assert_equals(&A,&B,sizeof A, sizeof B))
+#define assert_same(MSG,A,B) assert_true(MSG,A==B)
 #endif
 
 #ifndef assert_equals
@@ -39,7 +39,7 @@ typedef char boolean;
 #endif
 
 #ifndef assert_not_same
-#define assert_not_same(MSG,A,B) assert_false(MSG,__assert_equals(&A,&B,sizeof A, sizeof B))
+#define assert_not_same(MSG,A,B) assert_false(MSG,A==B)
 #endif
 
 #ifndef assert_not_equals

@@ -1,0 +1,25 @@
+Dojo Unit v. 0.2
+by Hugo Corbucci & Dojo participant's contributions
+
+Description
+-----------
+The Dojo Unit is a small C Unit tests library with some utilities scripts.
+The 'src' folder contains the code file (dojo_unit.c) and header file (dojo_unit.h) that form the library.
+The 'tests' folder contains tests for the dojo library.
+The 'scripts' folder contains various scripts to generate files required to run the tests or create projects.
+
+Known Issues
+------------
+So far, the library works only under Mac OS X and Linux (problems with LD_LIBRARY_PATH still to be solved under Linux).
+Once make install is ready, this should be solved.
+
+
+How to run
+-----------
+'make' to compile the library and run the tests printing a default summary. If successful, the generated library is copied to the
+template project and it can be used to create new projects.
+'make zip' or 'make tar' or 'make targz' create a compressed version of the code.
+To create your own projects, enter the script folder and run ./create_project NAME_OF_YOUR_PROJECT. This will create a folder 
+with the name of your project on the dojo unit home with all replaced. Then just alter the files on the 'src' and 'tests' folder
+of your project.
+

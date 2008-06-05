@@ -9,7 +9,7 @@ void test_assert_true_false() {
 
 void test_assert_same_ints() {
   int zero = 0, um = 1, un = 1;
-  assert_not_same("0 == 1", zero, um);
+  assert_not_same("0 == 1", 0, 1);
   assert_same("1 == 1", um, um);
   assert_same("1 <> 1", um, un);
   assert_not_same("1 == 0", um, zero);

@@ -50,7 +50,7 @@ $(LIB_DIR):
 # Other Targets
 clean:
 	@echo 'Cleaning up project'
-	-$(RM) $(CODE_OBJS) $(TESTS_OBJS) $(EXECUTABLES) $(TESTS_DIR)/$(PROJECT)_tests_main.c $(PROJECT) $(PROJECT)_tests $(BIN_DIR)
+	-$(RM) $(CODE_OBJS) $(TESTS_OBJS) $(EXECUTABLES) $(TESTS_DIR)/$(PROJECT)_tests_main.c $(PROJECT) $(PROJECT)_tests $(BIN_DIR) */.DS_Store
 	@echo ' '
 
 .PHONY: all clean
@@ -58,12 +58,12 @@ clean:
 
 zip: clean ../$(PROJECT) $(BIN_DIR)
 	@echo 'Generating $@ file for $(PROJECT)'
-	cd .. && zip -r $(PROJECT)/$(BIN_DIR)/$(PROJECT).zip $(PROJECT)
+	cd .. && zip -r $(PROJECT)/$(BIN_DIR)/$(PROJECT).zip $(PROJECT) -x $(PROJECT)/$(LIB_DIR)/$(TESTS_LIB)
 	@echo ' '
 
 tar: clean ../$(PROJECT) $(BIN_DIR)
 	@echo 'Generating $@ file for $(PROJECT)'
-	cd .. && tar -cf $(PROJECT)/$(BIN_DIR)/$(PROJECT).tar $(PROJECT)
+	cd .. && tar -cf $(PROJECT)/$(BIN_DIR)/$(PROJECT).tar $(PROJECT) -X $(PROJECT)/$(LIB_DIR)/$(TESTS_LIB)
 	@echo ' '
 	
 targz: tar

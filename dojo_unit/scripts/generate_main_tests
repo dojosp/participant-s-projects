@@ -4,8 +4,8 @@ test_name_pattern = /void[[:space:]]+(test_[a-zA-Z0-9_]*)[[:space:]]*\(\)\;[[:sp
 set_up_pattern = /void[[:space:]]+set_up[[:space:]]*\(\)\;[[:space:]]*/
 tear_down_pattern = /void[[:space:]]+tear_down[[:space:]]*\(\)\;[[:space:]]*/
 
-header_filename = $*[0] + ".h"
-output_name = $*[0]+"_main.c"
+header_filename = $*[0] + '.h'
+output_name = $*[0] + '_main.c'
 
 def find_tests(filename, test, set_up, tear_down)
 	has_set_up = false
@@ -27,25 +27,31 @@ def print_main(output_name, filename, has_set_up, has_tear_down, tests)
 	output = File.new(output_name,'w')
 	
 	output.puts '#include "'+filename+'"'
-	output.puts ""
-	output.puts "int main() {"
+	output.puts ''
+	output.puts 'int main(int argc, char**argv) {'
+	output.puts "\t"+'int i=1;boolean render_with_colors=false;'
+	output.puts "\t"+'while(i<argc && !render_with_colors) {'
+	output.puts "\t\t"+'render_with_colors = (strcmp("--colors",argv[i++]) == 0);'
+	output.puts "\t"+'}'
+	output.puts "\t"+'set_colorize_input(render_with_colors);'
 
 	tests.each do |test|
 		print_test(output, has_set_up, has_tear_down, test)	
 	end
 	
-	output.puts ""
-	output.puts "\t__print_tests_summary("+tests.size.to_s+"); return 0;"
-	output.puts "}"
+	output.puts ''
+	output.puts "\t"+'__print_tests_summary('+tests.size.to_s+');'
+	output.puts "\t"+'return 0;'
+	output.puts '}'
 	
 	output.close
 end
 
 def print_test(output, has_set_up, has_tear_down, test)
-	output.puts("")
-	output.puts("\tset_up();") if has_set_up
-	output.puts("\t"+test+"();")
-	output.puts("\ttear_down();") if has_tear_down
+	output.puts('')
+	output.puts("\t"+'set_up();') if has_set_up
+	output.puts("\t"+test+'();')
+	output.puts("\t"+'tear_down();') if has_tear_down
 end
 
 test_file_config = find_tests(header_filename,

@@ -17,7 +17,7 @@ run: $(BIN_DIR) $(PROJECT)
 run_tests: $(BIN_DIR) $(PROJECT)_tests
 	@echo 'Running project tests executable'
 	@echo ' '
-	clear && ./$(BIN_DIR)/$(PROJECT)_tests
+	clear && ./$(BIN_DIR)/$(PROJECT)_tests $(ARGS)
 
 # Tool invocations
 $(PROJECT): $(BIN_DIR) $(CODE_OBJS)

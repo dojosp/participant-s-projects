@@ -4,6 +4,11 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define COLOR_RED    41
+#define COLOR_GREEN  42
+#define COLOR_YELLOW 43
+#define COLOR_BACKGROUND  0
+
 typedef char boolean;
 
 #ifndef true
@@ -15,7 +20,7 @@ typedef char boolean;
 #endif
 
 #ifndef throw_error
-#define throw_error(MSG) do{__increase_error_count();fprintf(stderr,"ERROR in file \"%s\", line %d: %s\n", __FILE__, __LINE__, MSG);return;}while(0)
+#define throw_error(MSG) do{__increase_error_count();fprintf(stderr, "%s in file \"%s\", line %d: %s\n", colorize("ERROR", COLOR_RED), __FILE__, __LINE__, MSG);return;}while(0)
 #endif
 
 #ifndef assert_true
@@ -27,7 +32,7 @@ typedef char boolean;
 #endif
 
 #ifndef pending
-#define pending() do{__increase_pending_count();fprintf(stderr,"Pending test in file \"%s\", near line %d.\n", __FILE__, __LINE__ - 1);return;}while(0)
+#define pending() do{__increase_pending_count();fprintf(stderr, "%s test in file \"%s\", near line %d.\n", colorize("Pending", COLOR_YELLOW), __FILE__, __LINE__ - 1);return;}while(0)
 #endif
 
 #ifndef assert_same
@@ -53,6 +58,12 @@ typedef char boolean;
 #ifndef assert_not_null
 #define assert_not_null(MSG,A) if(A==NULL)throw_error(MSG)
 #endif
+
+char colorized[80];
+boolean render_with_colors;
+
+char* colorize(char*, int);
+void set_colorize_input(boolean);
 
 boolean __assert_equals(const void*, const void*, const int, const int);
 boolean __assert_equals_cmp(void*, void*, const int *(func)(void*, void*));

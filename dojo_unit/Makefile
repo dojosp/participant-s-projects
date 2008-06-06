@@ -15,7 +15,7 @@ run: $(BIN_DIR) $(PROJECT)
 run_tests: $(BIN_DIR) $(PROJECT)_tests
 	@echo 'Running project tests executable'
 	@echo ' '
-	clear && ./$(BIN_DIR)/$(PROJECT)_tests
+	clear && ./$(BIN_DIR)/$(PROJECT)_tests $(ARGS)
 
 # Tool invocations
 $(PROJECT): $(BIN_DIR) $(CODE_OBJS)
@@ -52,6 +52,8 @@ $(TEMPLATE)/lib:
 
 # Other Targets
 clean:
+	@echo 'Clening template'
+	cd $(TEMPLATE) && $(MAKE) $@ && cd ..
 	@echo 'Cleaning folders'
 	-$(RM) $(CODE_OBJS) $(TESTS_OBJS) $(EXECUTABLES) $(TESTS_DIR)/$(PROJECT)_tests_main.c $(PROJECT) $(PROJECT)_tests $(BIN_DIR) $(LIB_DIR)/$(TESTS_LIB) $(TEMPLATE)/lib/*dojo_unit* */.DS_Store
 	@echo ' '

@@ -24,11 +24,11 @@ typedef char boolean;
 #endif
 
 #ifndef assert_true
-#define assert_true(MSG,A) if(!A)throw_error(MSG)
+#define assert_true(MSG,A) if(!(A))throw_error(MSG)
 #endif
 
 #ifndef assert_false
-#define assert_false(MSG,A) if(A)throw_error(MSG)
+#define assert_false(MSG,A) if((A))throw_error(MSG)
 #endif
 
 #ifndef pending
@@ -36,27 +36,27 @@ typedef char boolean;
 #endif
 
 #ifndef assert_same
-#define assert_same(MSG,A,B) assert_true(MSG,A==B)
+#define assert_same(MSG,A,B) assert_true(MSG,((A)==(B)))
 #endif
 
 #ifndef assert_equals
-#define assert_equals(MSG,A,B,COMP) assert_true(MSG,__assert_equals_cmp(A,B,COMP))
+#define assert_equals(MSG,A,B,COMP) assert_true(MSG,__assert_equals_cmp((A),(B),COMP))
 #endif
 
 #ifndef assert_not_same
-#define assert_not_same(MSG,A,B) assert_false(MSG,A==B)
+#define assert_not_same(MSG,A,B) assert_false(MSG,((A)==(B)))
 #endif
 
 #ifndef assert_not_equals
-#define assert_not_equals(MSG,A,B,COMP) assert_false(MSG,__assert_equals_cmp(A,B,COMP))
+#define assert_not_equals(MSG,A,B,COMP) assert_false(MSG,__assert_equals_cmp((A),(B),COMP))
 #endif
 
 #ifndef assert_null
-#define assert_null(MSG,A) if(A!=NULL)throw_error(MSG)
+#define assert_null(MSG,A) if((A)!=NULL)throw_error(MSG)
 #endif
 
 #ifndef assert_not_null
-#define assert_not_null(MSG,A) if(A==NULL)throw_error(MSG)
+#define assert_not_null(MSG,A) if((A)==NULL)throw_error(MSG)
 #endif
 
 char colorized[80];

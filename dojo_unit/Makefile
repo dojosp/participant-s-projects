@@ -81,3 +81,6 @@ targz: tar
 	@echo 'Generating $@ file for $(PROJECT)'
 	gzip $(BIN_DIR)/$(PROJECT).tar
 	@echo ' '
+
+install: run_tests copy_template
+	

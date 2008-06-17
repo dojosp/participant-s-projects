@@ -6,6 +6,7 @@ TESTS_DIR := tests
 LIB_DIR := lib
 BIN_DIR := bin
 SCRIPT_DIR := scripts
+INSTALL_DIR := /usr/shared/lib
 
 CC := gcc
 LFLAGS := -Wall -ansi -pedantic

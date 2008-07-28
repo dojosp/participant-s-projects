@@ -74,7 +74,7 @@ zip: clean ../$(PROJECT) $(BIN_DIR)
 
 tar: clean ../$(PROJECT) $(BIN_DIR)
 	@echo 'Generating $@ file for $(PROJECT)'
-	cd .. && tar -cf $(PROJECT)/$(BIN_DIR)/$(PROJECT).tar $(PROJECT) -X $(PROJECT)/$(LIB_DIR)/$(TESTS_LIB)
+	cd .. && tar -cf $(PROJECT)/$(BIN_DIR)/$(PROJECT).tar $(PROJECT)
 	@echo ' '
 	
 targz: tar
@@ -82,5 +82,19 @@ targz: tar
 	gzip $(BIN_DIR)/$(PROJECT).tar
 	@echo ' '
 
-install: run_tests copy_template
-	
+install: uninstall run_tests copy_template
+	@echo 'Installing $(PROJECT) to $(INSTALL_DIR)'
+	mkdir -p $(INSTALL_DIR)/$(SCRIPT_DIR)
+	cp -r $(LIB_DIR) $(TEMPLATE) $(INSTALL_DIR)
+	cp -r $(SCRIPT_DIR)/generate_main_tests $(INSTALL_DIR)/$(SCRIPT_DIR)/
+	@echo '#!/usr/bin/env bash' > $(INSTALL_DIR)/$(SCRIPT_DIR)/create_project
+	@echo '' > $(INSTALL_DIR)/$(SCRIPT_DIR)/create_project
+	@echo 'DOJO_UNIT_HOME=$(INSTALL_DIR)' >> $(INSTALL_DIR)/$(SCRIPT_DIR)/create_project
+	tail -n +4 $(SCRIPT_DIR)/create_project >> $(INSTALL_DIR)/$(SCRIPT_DIR)/create_project
+	chmod a+x $(INSTALL_DIR)/$(SCRIPT_DIR)/create_project
+	ln -s $(INSTALL_DIR)/$(SCRIPT_DIR)/create_project /usr/bin/
+	@echo 'TESTS_LIB := $(TESTS_LIB)' > $(INSTALL_DIR)/$(TEMPLATE)/$(OS_NAME).mk
+    	
+uninstall:
+	@echo 'Uninstalling $(PROJECT) from $(INSTALL_DIR)'
+	rm -Rf $(INSTALL_DIR) /usr/bin/create_project

@@ -8,6 +8,7 @@ all: run_tests
 -include sources.mk
 -include tests/subdir.mk
 -include src/subdir.mk
+-include $(OS_NAME).mk
 
 run: $(BIN_DIR) $(PROJECT)
 	@echo 'Running project executable'
@@ -27,8 +28,8 @@ $(PROJECT): $(BIN_DIR) $(CODE_OBJS)
 	@echo ' '
 
 $(PROJECT)_tests: $(BIN_DIR) $(CODE_OBJS) $(TESTS_OBJS) $(LIB_DIR)/$(TESTS_LIB)
-	@echo 'Building target: $@'
-	$(CC) $(LFLAGS) -o $(BIN_DIR)/$@ $(CODE_OBJS) $(TESTS_OBJS) $(LIBS)
+	@echo 'Building target: $@ with $(TESTS_LIB)'
+	$(CC) $(LFLAGS) -o $(BIN_DIR)/$@ $(CODE_OBJS) $(TESTS_OBJS) $(LIBS) $(LIB_DIR)/$(TESTS_LIB)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	

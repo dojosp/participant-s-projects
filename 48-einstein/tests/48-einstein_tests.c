@@ -1,41 +1,37 @@
 #include "48-einstein_tests.h"
 
-static char *example;
+void test_fill_graph_matrix() {
+	graph *g = graph_new(5);
+	assert_same("The graph should have 5 vertexes", 5, graph_vertexes(g));
 
-int comparing(void *a, void *b) {
-	return true;
+	g = graph_new(10);
+	assert_same("The graph should have 10 vertexes", 10, graph_vertexes(g));
+	
+	g = graph_new(3);
+	assert_same("The graph should have 3 vertexes", 3, graph_vertexes(g));
+	graph_add_edge(g, 0, 1, 2);
+	assert_same("The graph should have an edge from 0 to 1 w/ cost 2", 2, graph_edge_cost(g, 0, 1));
+	assert_same("The graph should have an edge from 1 to 0 w/ cost 2", 2, graph_edge_cost(g, 1, 0));
+	
+	assert_same("The graph should not have an edge from 0 to 2", 0, graph_edge_cost(g, 0, 2));
+	
+	g = graph_new(3);
+	assert_same("The graph should have 3 vertexes", 3, graph_vertexes(g));
+	assert_same("The graph should not have an edge from 0 to 1", 0, graph_edge_cost(g, 0, 1));
 }
 
-void set_up() {
-	/* Add code to be run before every test here or remove this function if useless */
-	example = malloc(sizeof(char) * 10);
-	strcpy(example, "Dojo Unit");
+void test_build_graph_from_input() {
+	char *entrada = "1\n\\
+ 3 1\n\\
+ 1 2 1";
+	graph *g = graph_read(entrada);
+	assert_same("Graph cost of vertex 1 to 2 was not 1",1, graph_edge_cost(g, 1, 2));
 }
 
-void test_that_passes() {
-	int expected = 1;
-	int result = return_parameter(1);
-	/* Uses byte per byte comparation. Works with all primitive types
-	   and with structs (will compare eventual pointers in it */
-	assert_same("This test should never fail.", expected, result);
-}
-
-void test_that_fails() {
-	char test[5] = "test";
-	/* Uses the function passed as last parameter to compare arguments */
-	assert_equals("This test should never pass.", test, example, comparing);
-}
-
-void test_that_pends() {
-	void* pointer = (void*) 0x1;
-	/* Asks dojo_unit to hold this tests execution but counts it */
+void test_calculate_cost_one_vertex_isolation() {
 	pending();
-	/* Only verifies if point != NULL (or == NULL if assert_null) */
-	assert_not_null("0x1 should not be NULL", pointer);
 }
 
-void tear_down() {
-	/* Add code to be run after every test here or remove this function if useless */
-	free(example);
+void test_calculate_cost_one_subset_isolation() {
+	pending();
 }
-

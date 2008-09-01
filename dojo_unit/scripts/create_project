@@ -6,7 +6,7 @@ DEST=.
 TEMPLATE_PROJECT_NAME=c_project_template
 TEMPLATE_PROJECT=${DOJO_UNIT_HOME}/${TEMPLATE_PROJECT_NAME}
 TARGET=${DEST}/${PROJECT_NAME}
-PROJECT_NAME_UPPER=$(echo "$PROJECT_NAME" | tr '[:lower:]' '[:upper:]')
+PROJECT_NAME_UPPER=$(echo "$PROJECT_NAME" | tr '[:lower:]' '[:upper:]' | tr -C '[:alnum:]' '_')
 TEMPLATE_PROJECT_NAME_UPPER=$(echo "$TEMPLATE_PROJECT_NAME" | tr '[:lower:]' '[:upper:]')
 OS_NAME=$(uname -s)
 

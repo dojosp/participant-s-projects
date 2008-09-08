@@ -1,3 +1,3 @@
 module Sanduiche where
 
-montaMatriz _ = [1]
+montaMatriz [x] = [[x*x]]

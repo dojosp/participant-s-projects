@@ -7,12 +7,14 @@ int main(int argc, char**argv) {
 	}
 	set_colorize_input(render_with_colors);
 
-	test_that_passes();
+	test_fill_graph_matrix();
 
-	test_that_fails();
+	test_build_graph_from_input();
 
-	test_that_pends();
+	test_calculate_cost_one_vertex_isolation();
 
-	__print_tests_summary(3);
+	test_calculate_cost_one_subset_isolation();
+
+	__print_tests_summary(4);
 	return 0;
 }

@@ -26,6 +26,8 @@ void test_build_graph_from_input() {
  1 2 1";
 	graph *g = graph_read(entrada);
 	assert_same("Graph cost of vertex 1 to 2 was not 1",1, graph_edge_cost(g, 1, 2));
+	
+	
 }
 
 void test_calculate_cost_one_vertex_isolation() {

@@ -5,4 +5,8 @@ import Sanduiche
 
 main = runTestTT testes
 
-testes = TestList []
+testes = TestList [verificaMontaMatriz]
+
+verificaMontaMatriz = TestList ["Nao monta uma matriz de tamanho 1" ~:
+								[1] ~=? montaMatriz [1]]
+

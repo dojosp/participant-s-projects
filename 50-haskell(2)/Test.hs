@@ -25,6 +25,8 @@ verificaMontaMatriz = TestList
 testaJuncaoDeListas = TestList
 	["Nao juntou listas com um elemento cada" ~:
 	[[1, 1]] ~=? juntaListas [1] [[1]]
-	,"Nao juntou listas com um elemento diferente em cada" ~:
+	,"Nao juntou listas com um elemento diferente na matriz" ~:
 	[[1, 2]] ~=? juntaListas [1] [[2]]
+	,"Nao juntou listas com um elemento diferente na lista" ~:
+	[[10, 2]] ~=? juntaListas [10] [[2]]
 	]

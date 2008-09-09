@@ -10,8 +10,7 @@ module Sanduiche where
 		matrizToda = [ a:b | a <- primeiraColuna, b
 -}
 
-juntaListas [1] [[1]] = [[1 , 1]]
-juntaListas [1] [[2]] = [[1 , 2]]
+juntaListas [1] [[x]] = [[1, x]]
 
 
 montaMatriz [x,y,z] = [[x*x,x*y,x*z],[x*y,y*y,y*z],[x*z,z*y,z*z]]

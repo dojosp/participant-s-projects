@@ -1,6 +1,6 @@
 module Sanduiche where
 
 
-montaMatriz [1,2,3] = [[1,2,3],[2,4,6],[3,6,9]]
+montaMatriz [x,y,z] = [[x*x,x*y,x*z],[x*y,y*y,y*z],[x*z,z*y,z*z]]
 montaMatriz [x,y] = [[x*x,x*y],[x*y,y*y]] 
 montaMatriz [x] = [[x*x]]

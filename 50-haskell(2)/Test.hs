@@ -5,7 +5,7 @@ import Sanduiche
 
 main = runTestTT testes
 
-testes = TestList [verificaMontaMatriz , testaJuncaoDeListas]
+testes = TestList [verificaMontaMatriz , testaJuncaoDeListas, testeCriaMatrizAchatada]
 
 verificaMontaMatriz = TestList
 	["Nao monta uma matriz de tamanho 1" ~:
@@ -29,4 +29,9 @@ testaJuncaoDeListas = TestList
 	[[1, 2]] ~=? juntaListas [1] [[2]]
 	,"Nao juntou listas com um elemento diferente na lista" ~:
 	[[10, 2]] ~=? juntaListas [10] [[2]]
+	]
+	
+testeCriaMatrizAchatada = TestList
+	["Nao achatou a matriz com quatro elementos" ~:
+	[1, 2, 2, 4] ~=? achataMatriz [1,2]
 	]

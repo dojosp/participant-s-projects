@@ -31,4 +31,9 @@ testeMaiorPotenciaQueCabe =
 
      ,"Maior potencia de 3 que cabe em 4 e' 1" ~:
      1  ~=? maxPot3 4
+
+--     ,"Maior potencia de 3 que cabe em 9 e' 1" ~:
+  --   1  ~=? maxPot3 4
+
+
     ]

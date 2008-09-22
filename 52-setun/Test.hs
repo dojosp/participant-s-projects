@@ -12,4 +12,7 @@ testeConverteParaUmDigito =
     [
      "Converte 0 para 0" ~:
      "0" ~=? converte 0
+
+    ,"Converte 1 para +" ~:
+     "+" ~=? converte 1
     ]

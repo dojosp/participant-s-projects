@@ -3,6 +3,7 @@ module Trit where
 converte 0 = "0"
 converte 1 = "+"
 converte (-1) = "-"
+converte 2 = "+-"
 
 maxPot3 :: Int -> Int 
 maxPot3 x

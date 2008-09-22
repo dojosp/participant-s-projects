@@ -1,3 +1,4 @@
 module Trit where
 
-converte _ = "0"
+converte 0 = "0"
+converte 1 = "+"

@@ -5,8 +5,8 @@ converte 1 = "+"
 
 maxPot3 :: Int -> Int 
 maxPot3 x
-    | x < 3 = 0
-    | otherwise = 1 + maxPot3 (x `div` 3)
+    | x < 3 = 1
+    | otherwise = 3* maxPot3 (x `div` 3)
 
 
 

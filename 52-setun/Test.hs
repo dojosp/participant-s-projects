@@ -22,4 +22,7 @@ testeMaiorPotenciaQueCabe =
     [
      "Maior potencia de 3 que cabe em 1 e' 0" ~:
      0  ~=? maxPot3 1
+
+     ,"Maior potencia de 3 que cabe em 2 e' 0" ~:
+     0  ~=? maxPot3 2
     ]

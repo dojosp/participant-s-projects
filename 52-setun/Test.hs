@@ -5,7 +5,7 @@ import Trit
 
 main = runTestTT testes
 
-testes = TestList [testeConverteParaUmDigito]
+testes = TestList [testeConverteParaUmDigito , testeMaiorPotenciaQueCabe]
 
 testeConverteParaUmDigito =
     TestList 
@@ -15,4 +15,11 @@ testeConverteParaUmDigito =
 
     ,"Converte 1 para +" ~:
      "+" ~=? converte 1
+    ]
+
+testeMaiorPotenciaQueCabe =
+    TestList
+    [
+     "Maior potencia de 3 que cabe em 1 e' 0" ~:
+     0  ~=? maxPot3 1
     ]

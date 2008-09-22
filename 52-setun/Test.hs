@@ -18,6 +18,9 @@ testeConverteParaUmDigito =
 
     ,"Converte -1 para -" ~:
      "-" ~=? converte (-1)
+
+    ,"Converte 2 para +-" ~:
+     "+-" ~=? converte 2
     ]
 
 testeMaiorPotenciaQueCabe =

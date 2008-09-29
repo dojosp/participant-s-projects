@@ -16,4 +16,8 @@ testeMapeia =
      [5] ~=? (mapeia [0] (+ 5))
     ,"Nao mapeia lista de dois elementos para dois elementos com funcao" ~:
      [5 , 15] ~=? (mapeia [0 , 10] (+ 5))
+    ,"Nao mapeia lista de strings para lista de tamanhos" ~:
+     [3,4,2] ~=? (mapeia ["...", "dojo", "oi"] length)
     ]
+
+

@@ -32,4 +32,6 @@ testeFiltro =
      [] ~=? filtra ['A'] Char.isLower
     ,"Lista com um elemento que satisfaz predicado e um que nao" ~:
      ['a'] ~=? filtra ['a', 'A'] Char.isLower
+    ,"Lista com varios elementos com predicado diferente" ~:
+     [4, 8] ~=? filtra [1, 3, 4, 7, 8] even
     ]

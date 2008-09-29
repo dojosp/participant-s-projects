@@ -26,4 +26,6 @@ testeFiltro =
     [
      "Nao filtra lista vazia" ~:
      [] ~=? filtra [] Char.isLower
+    ,"Elemento que satisfaz deveria ficar na lista, que tem tamanho 1" ~:
+     ['a'] ~=? filtra ['a'] Char.isLower
     ]

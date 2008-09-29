@@ -5,5 +5,6 @@ mapeia (a : resto) funcao = (funcao a):mapeia resto funcao
 mapeia [] funcao = []
 
 filtra :: [a] -> (a -> Bool) -> [a]
-filtra [] _ = [] 
+filtra [] _ = []
+filtra [x] _ = [x]
 

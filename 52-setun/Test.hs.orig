@@ -1,0 +1,37 @@
+module Main where
+
+import Test.HUnit
+import Trit
+
+main = runTestTT testes
+
+testes = TestList [testeConverteParaUmDigito , testeMaiorPotenciaQueCabe]
+
+testeConverteParaUmDigito =
+    TestList 
+    [
+     "Converte 0 para 0" ~:
+     "0" ~=? converte 0
+
+    ,"Converte 1 para +" ~:
+     "+" ~=? converte 1
+    ]
+
+testeMaiorPotenciaQueCabe =
+    TestList
+    [
+     "Posicao do maior digito significativo em trits de 0 eh 0" ~:
+     0  ~=? posDigitoSignificativo 0
+
+     ,"Posicao do maior digito significativo em trits de 1 eh 0" ~:
+     0  ~=? posDigitoSignificativo 1
+
+     ,"Posicao do maior digito significativo em trits de 2 eh 2" ~:
+     0  ~=? posDigitoSignificativo 2
+
+     ,"Posicao do maior digito significativo em trits de 3 eh " ~:
+     0  ~=? posDigitoSignificativo 1
+
+     ,"Posicao do maior digito significativo em trits de 0 eh 1" ~:
+     0  ~=? posDigitoSignificativo 1
+    ]

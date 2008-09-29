@@ -7,7 +7,8 @@ converte x =
     let
         pot = maxPot3 (x+1)
     in
-      "+" ++ converte(x-pot)
+      "+" ++ converte (x-pot)
+
 
 maxPot3 :: Int -> Int 
 maxPot3 x

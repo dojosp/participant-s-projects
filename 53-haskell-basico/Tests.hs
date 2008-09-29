@@ -28,4 +28,6 @@ testeFiltro =
      [] ~=? filtra [] Char.isLower
     ,"Elemento que satisfaz deveria ficar na lista, que tem tamanho 1" ~:
      ['a'] ~=? filtra ['a'] Char.isLower
+    ,"Elemento que nao satisfaz deveria sair da lista, que tem tamanho 1" ~:
+     [] ~=? filtra ['A'] Char.isLower
     ]

@@ -1,11 +1,12 @@
 module Main where
 
 import Test.HUnit
+import Char
 import Basicas
 
 main = runTestTT testes
 
-testes = TestList [testeMapeia]
+testes = TestList [testeMapeia,testeFiltro]
 
 testeMapeia =
     TestList
@@ -20,4 +21,9 @@ testeMapeia =
      [3,4,2] ~=? (mapeia ["...", "dojo", "oi"] length)
     ]
 
-
+testeFiltro =
+    TestList
+    [
+     "Nao filtra lista vazia" ~:
+     [] ~=? filtra [] Char.isLower
+    ]

@@ -30,4 +30,6 @@ testeFiltro =
      ['a'] ~=? filtra ['a'] Char.isLower
     ,"Elemento que nao satisfaz deveria sair da lista, que tem tamanho 1" ~:
      [] ~=? filtra ['A'] Char.isLower
+    ,"Lista com um elemento que satisfaz predicado e um que nao" ~:
+     ['a'] ~=? filtra ['a', 'A'] Char.isLower
     ]

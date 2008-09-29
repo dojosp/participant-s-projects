@@ -11,5 +11,5 @@ testeMapeia =
     TestList
     [
      "Mapeia de lista vazia é lista vazia" ~:
-     [] ~=? mapeia [] (+ 5)
+     [] ~=? (mapeia [] (+ 5))
     ]

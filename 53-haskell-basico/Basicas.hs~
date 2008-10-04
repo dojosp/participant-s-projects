@@ -1,0 +1,4 @@
+module Basicas where
+
+mapeia [] funcao = [] 
+

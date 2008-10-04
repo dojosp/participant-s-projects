@@ -1,0 +1,8 @@
+module Trit where
+
+parseTrit "0" = 0
+parseTrit "+" = 1
+parseTrit "-" = -1
+parseTrit (x:xs) = 
+    (3 ^ (length xs)) * (parseTrit [x]) + (parseTrit xs)
+

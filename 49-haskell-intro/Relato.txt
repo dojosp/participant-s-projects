@@ -1,0 +1,36 @@
+Data: 1/09/2008  (PARABÉNS JAC!!!)
+Participantes: Thiago, Yoshi, Hugo, Mari, Jac e Breno
+Kata: Introdução à Haskell
+
+Empolgada pelo Dojo de Paris, a Mari resolveu apresentar uma introdução básica à Haskell para que quando ela for apresentar o kata de verdade não ficassemos totalmente perdidos, como já aconteceu.
+Portanto ela apresentou Haskell "formalmente", dizendo que é uma linguagem funcional e lazy.
+Em sequida explicou os termos para as pessoas que não as conhecia: 
+  -"...funcional pois tudo é função..."
+  -"...lazy porque ela só calcula o que for necessário quando for necessário..."
+Feito isto iniciamos a parte legal: Código!
+
+CODANDO
+
+Mostrando no interpretador de haskell como fazemos "atribuições" em "variáveis" (entre aspas porque na linguagem não ocorrem atribuições e as variáveis não variam depois de definidas), depois como criamos uma função no próŕio interpretador. Função esta que explicitava o fato de ser lazy.
+Depois de sabermos o básico do básico de haskell, iniciamos um "micro-problema": Calcular um fatorial.
+Para calcular o fatorial iniciamos o TDD, e com baby-steps aprendemos o matching pattern das funções, e como este recurso deixa fácil, rápido e compreensível o "cheating" de fazer passar MUITO rapidamente qualquer teste (colocando o valor esperado como valor de retorno de uma funcao que recebe exatamente os valores testados para ela), este fato foi mais comentado na "Retrospectiva". Juntamente com o matching pattern pudemos aprender como o fato da recursão em uma linguamgem funcional e lazy pode ser algo extremamente útil e poderoso, já que uma vez calculado um valor, não iremos recalculá-lo.
+Além disso com o fatorial funcionando entendemos como funciona os tipos de variáveis, e como controlar o uso das funções com estes tipos. Aqui começou a abstração interessante e nada trivial sobre a linguagem.
+Terminada a parte do fatorial, entramos na parte de estrutura de dados: Como calcular a soma dos elementos de uma lista.
+Assim vimos novamente a combinação "macthing pattern de funções + recursão", além de entender como controlar os elementos da lista com funções de primeiro, e resto da lista, além do "mágico" macthing pattern da lista, separando facilmente os elementos da lista. 
+E foi neste ponto que uma grande discussão próspera começou. Como usar a função 'foldr'.
+Para começar, a Mari mostrou o tipo da função. O que depois provou-se um GIANT-Step, pois consigo trouxe a idéia da função Lambda, '+' como sendo uma função binária com "bagunça" nos parâmetros, como podemos usar o "mais" de mais de uma maneira, e assim o caos se perpetuou, já que puquíssimas pessoas continuavam entendendo. Mas graças à paciência de Hugo e Mari tudo se resolveu rapidamente.
+Começaram explicando como funciona (não o que é de verdade) uma função lambda, e como todos parâmetros de uma função se tornam no final uma função Lambda, e com várias chamadas de funções obscuras resultamos na funçao desejada.
+Depois de claro como era o tipo e para que serve o 'foldr', como esta é uma ferramenta poderosa e muito útil na iteração de listas.
+Em seguida a Mari continuou mostrando o map e o filter. e assim percebemos o baby-step invertido... Já que estas últimas funções foram rapidamente compreendidas.
+Neste ponto a Pizza chegou!
+
+RETROSPECTIVA
+
+Como de praxe, para "atazanar" um certo membro do Dojo, fizemos retrospectiva COM comida.. ^^
+Aqui entendemos muito bem (mas não completamente) o conceito da Função Lambda e quão dificil é compreende-la de fato, para esta explicação o Hugo mostrou um Jogo apresentado no Dojo de Paris para entender como funcionam as funções em Haskell.
+Depois de um bom tempo desenhando na lousa e depois que todos tinham compreendido os conceitos, partimos para o outor assunto interessante: Roubando para o teste passar rápido.
+Para fazer isto, podemos usar if's e else's para retornar logo de cara o valor esperado, ou simpismente e elegantemente usar o macthing pattern das funçoes. Esta tática foi motrada aos nossos "intercambistas" no dojo de Paris.
+Lá eles fazem com que o teste passe extremamente rápido, assim tudo que mexe na estrutura e otimização do código, incluindo aqui algorítmos desconhecidos, fica a par da refatoração. Percebemos que é bom treinar deste modo, pois nossa refatoração só causa um efeito "estético" no código, quase nunca alterando o método de resolução do problema.
+Assim ficou decidido que iremos tentar de vez em quando usar esta técnica "apelona".
+
+Depois de falarmos muito e de barriga cheia, cada um tomou seu rumo e assim terminou nosso dojo de número aproximadamente igual a 49.

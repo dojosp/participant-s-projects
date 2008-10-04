@@ -1,0 +1,709 @@
+3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,33Interrupted.
+Prelude> let x = 1
+Prelude> let x = x+1
+Prelude> x
+Interrupted.
+Prelude> Leaving GHCi.
+ticolucci@logiciel 49-haskell-intro$ ls
+ticolucci@logiciel 49-haskell-intro$ emacs Tests.hs &
+[1] 7437
+ticolucci@logiciel 49-haskell-intro$ sudo apt-get install haskell-mode
+[sudo] password for ticolucci: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libcommons-collections3-java junit4 libcommons-pool-java eclipse-jdt
+  eclipse-pde liblucene-java eclipse-rcp libcommons-el-java libregexp-java
+  libcommons-modeler-java liblog4j1.2-java libswt3.2-gtk-java libservlet2.4-java
+  libtomcat5.5-java libbcel-java ant libcommons-launcher-java
+  libcommons-logging-java libjaxp1.3-java libxul0d libcommons-dbcp-java
+  libxerces2-java libcommons-collections-java libcommons-beanutils-java
+  libmozjs0d libcommons-digester-java eclipse-platform libservlet2.3-java
+  liblucene-java-doc libxul-common libjsch-java libswt3.2-gtk-jni ant-optional
+  libmx4j-java
+Use 'apt-get autoremove' to remove them.
+The following NEW packages will be installed:
+  haskell-mode
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 76.5kB of archives.
+After this operation, 414kB of additional disk space will be used.
+Get:1 http://za.archive.ubuntu.com hardy/universe haskell-mode 2.3-1 [76.5kB]
+Fetched 76.5kB in 3s (19.6kB/s)      
+Selecting previously deselected package haskell-mode.
+(Reading database ... 182627 files and directories currently installed.)
+Unpacking haskell-mode (from .../haskell-mode_2.3-1_all.deb) ...
+Setting up haskell-mode (2.3-1) ...
+install/haskell-mode: Handling install for emacsen flavor emacs22
+Loading 00debian-vars...
+No /etc/mailname. Reverting to default...
+Loading /etc/emacs22/site-start.d/50auctex.el (source)...
+Loading /usr/share/emacs/22.1/site-lisp/auctex.el (source)...
+Loading /usr/share/emacs/22.1/site-lisp/preview-latex.el (source)...
+Loading /etc/emacs/site-start.d/50dictionaries-common.el (source)...
+Loading debian-ispell...
+Loading /var/cache/dictionaries-common/emacsen-ispell-default.el (source)...
+Loading /var/cache/dictionaries-common/emacsen-ispell-dicts.el (source)...
+Loading /etc/emacs/site-start.d/50haskell-mode.el (source)...
+Loading /etc/emacs/site-start.d/50lilypond-data.el (source)...
+Loading /etc/emacs/site-start.d/50psvn.el (source)...
+Loading /etc/emacs/site-start.d/50whitespace.el (source)...
+Wrote /usr/share/emacs22/site-lisp/haskell-mode/haskell-cabal.elc
+Wrote /usr/share/emacs22/site-lisp/haskell-mode/haskell-decl-scan.elc
+Wrote /usr/share/emacs22/site-lisp/haskell-mode/haskell-doc.elc
+Wrote /usr/share/emacs22/site-lisp/haskell-mode/haskell-font-lock.elc
+Wrote /usr/share/emacs22/site-lisp/haskell-mode/haskell-ghci.elc
+Wrote /usr/share/emacs22/site-lisp/haskell-mode/haskell-hugs.elc
+Wrote /usr/share/emacs22/site-lisp/haskell-mode/haskell-indent.elc
+Wrote /usr/share/emacs22/site-lisp/haskell-mode/haskell-mode.elc
+Wrote /usr/share/emacs22/site-lisp/haskell-mode/haskell-simple-indent.elc
+Wrote /usr/share/emacs22/site-lisp/haskell-mode/inf-haskell.elc
+
+[1]+  Done                    emacs Tests.hs
+ticolucci@logiciel 49-haskell-intro$ emacs Tests.hs &
+[1] 7481
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test
+[1 of 1] Compiling Main             ( Tests.hs, Tests.o )
+Linking test ...
+ticolucci@logiciel 49-haskell-intro$ ./test 
+Cases: 1  Tried: 1  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+
+Tests.hs:11:16: Not in scope: `fatorial'
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+Linking test ...
+ticolucci@logiciel 49-haskell-intro$ ./test 
+Cases: 1  Tried: 1  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+Linking test ...
+Cases: 2  Tried: 2  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+Linking test ...
+### Failure in: 0:1:Deve calcular fatorial de 2
+expected: 2
+ but got: 1
+Cases: 2  Tried: 2  Errors: 0  Failures: 1
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+Linking test ...
+Cases: 2  Tried: 2  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+Linking test ...
+### Failure in: 0:2:Deve calcular fatorial de 3
+expected: 6
+ but got: 3
+Cases: 3  Tried: 3  Errors: 0  Failures: 1
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+Linking test ...
+Cases: 3  Tried: 3  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+Linking test ...
+Cases: 3  Tried: 3  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+Linking test ...
+Cases: 3  Tried: 3  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+Linking test ...
+Cases: 3  Tried: 3  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+Linking test ...
+Cases: 3  Tried: 3  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+
+Dojo49.hs:3:0:
+    Warning: Pattern match(es) are overlapped
+             In the definition of `fatorial': fatorial 2 = ...
+Linking test ...
+Cases: 3  Tried: 3  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+Linking test ...
+Cases: 3  Tried: 3  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+Linking test ...
+Cases: 3  Tried: 3  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghci
+GHCi, version 6.8.2: http://www.haskell.org/ghc/  :? for help
+Loading package base ... linking ... done.
+Prelude> :l Dojo49
+[1 of 1] Compiling Dojo49           ( Dojo49.hs, interpreted )
+Ok, modules loaded: Dojo49.
+*Dojo49> fatorial 4
+24
+*Dojo49> fatorial 'a'
+
+<interactive>:1:0:
+    No instance for (Num Char)
+      arising from a use of `fatorial' at <interactive>:1:0-11
+    Possible fix: add an instance declaration for (Num Char)
+    In the expression: fatorial 'a'
+    In the definition of `it': it = fatorial 'a'
+*Dojo49> :type 'a'
+'a' :: Char
+*Dojo49> :type fatorial
+fatorial :: (Num t) => t -> t
+*Dojo49> :reload
+[1 of 1] Compiling Dojo49           ( Dojo49.hs, interpreted )
+
+Dojo49.hs:3:13: parse error on input `->'
+Failed, modules loaded: none.
+Prelude> :reload
+[1 of 1] Compiling Dojo49           ( Dojo49.hs, interpreted )
+Ok, modules loaded: Dojo49.
+*Dojo49> :t fatorial
+fatorial :: Int -> Int
+*Dojo49> :r
+[1 of 1] Compiling Dojo49           ( Dojo49.hs, interpreted )
+Ok, modules loaded: Dojo49.
+*Dojo49> :t fatorial
+fatorial :: (Num t) => t -> t
+*Dojo49> :t 5
+5 :: (Num t) => t
+*Dojo49> let t = (1, 2, 3)
+*Dojo49> t
+(1,2,3)
+*Dojo49> let t = (1, 2, 'a')
+*Dojo49> t
+(1,2,'a')
+*Dojo49> :t t
+t :: (Integer, Integer, Char)
+*Dojo49> fst t
+
+<interactive>:1:4:
+    Couldn't match expected type `(a, b)'
+           against inferred type `(Integer, Integer, Char)'
+    In the first argument of `fst', namely `t'
+    In the expression: fst t
+    In the definition of `it': it = fst t
+*Dojo49> let t = (1, "Yoshi")
+*Dojo49> t
+(1,"Yoshi")
+*Dojo49> :t t
+t :: (Integer, [Char])
+*Dojo49> "Hello"
+"Hello"
+*Dojo49> ['H', 'e', 'l', 'l', 'o']
+"Hello"
+*Dojo49> 'H' : "ello"
+"Hello"
+*Dojo49> t
+(1,"Yoshi")
+*Dojo49> fst t
+1
+*Dojo49> snd t
+"Yoshi"
+*Dojo49> let l = "Hello"
+*Dojo49> l
+"Hello"
+*Dojo49> l ++ " World"
+"Hello World"
+*Dojo49> '!' : l
+"!Hello"
+*Dojo49> l
+"Hello"
+*Dojo49> l : " World"
+
+<interactive>:1:4:
+    Couldn't match expected type `[Char]' against inferred type `Char'
+      Expected type: [[Char]]
+      Inferred type: [Char]
+    In the second argument of `(:)', namely `" World"'
+    In the expression: l : " World"
+*Dojo49> [(1, 2), (2, 3)
+<interactive>:1:15: parse error (possibly incorrect indentation)
+*Dojo49> [(1, 2), (2, 3)]
+[(1,2),(2,3)]
+*Dojo49> [(1, 2), (2, 'a')]
+
+<interactive>:1:5:
+    No instance for (Num Char)
+      arising from the literal `2' at <interactive>:1:5
+    Possible fix: add an instance declaration for (Num Char)
+    In the expression: 2
+    In the expression: (1, 2)
+    In the expression: [(1, 2), (2, 'a')]
+*Dojo49> (1, 2): (2, 'a'):[]
+
+<interactive>:1:4:
+    No instance for (Num Char)
+      arising from the literal `2' at <interactive>:1:4
+    Possible fix: add an instance declaration for (Num Char)
+    In the expression: 2
+    In the first argument of `(:)', namely `(1, 2)'
+    In the expression: (1, 2) : (2, 'a') : []
+*Dojo49> (1, 2): (2, 'a')
+
+<interactive>:1:8:
+    Couldn't match expected type `[(t, t1)]'
+           against inferred type `(t2, Char)'
+    In the second argument of `(:)', namely `(2, 'a')'
+    In the expression: (1, 2) : (2, 'a')
+    In the definition of `it': it = (1, 2) : (2, 'a')
+*Dojo49> (1, 2): ((2, 'a'):[])
+
+<interactive>:1:4:
+    No instance for (Num Char)
+      arising from the literal `2' at <interactive>:1:4
+    Possible fix: add an instance declaration for (Num Char)
+    In the expression: 2
+    In the first argument of `(:)', namely `(1, 2)'
+    In the expression: (1, 2) : ((2, 'a') : [])
+*Dojo49> head l
+'H'
+*Dojo49> tail l
+"ello"
+*Dojo49> l
+"Hello"
+*Dojo49> head (tail l)
+'e'
+*Dojo49> tail (tail l)
+"llo"
+*Dojo49> length l
+5
+*Dojo49> Leaving GHCi.
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+
+Tests.hs:24:10: Not in scope: `soma'
+
+Tests.hs:24:19: Not in scope: `?=~'
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+
+Tests.hs:24:10: Not in scope: `soma'
+
+Tests.hs:24:19: Not in scope: `=~?'
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+
+Tests.hs:24:10: Not in scope: `soma'
+
+Tests.hs:24:19: Not in scope: `=?~'
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+
+Tests.hs:24:16: Not in scope: `soma'
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+Linking test ...
+Cases: 4  Tried: 4  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+Linking test ...
+Cases: 4  Tried: 4  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+Linking test ...
+Cases: 4  Tried: 4  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+Linking test ...
+### Failure in: 1:1:Soma lista de um elemento com valor diferente
+expected: 3
+ but got: 1
+Cases: 5  Tried: 5  Errors: 0  Failures: 1
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+Linking test ...
+Cases: 5  Tried: 5  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+Linking test ...
+Cases: 5  Tried: 5  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+Linking test ...
+Cases: 5  Tried: 5  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+Linking test ...
+### Error in:   1:2:Soma lista com mais de um elemento
+Dojo49.hs:8:0-11: Non-exhaustive patterns in function soma
+
+Cases: 6  Tried: 6  Errors: 1  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+Linking test ...
+Cases: 6  Tried: 6  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghci
+GHCi, version 6.8.2: http://www.haskell.org/ghc/  :? for help
+Loading package base ... linking ... done.
+Prelude> let l = [1, 2, 3]
+Prelude> l
+[1,2,3]
+Prelude> head l
+1
+Prelude> tail l
+[2,3]
+Prelude> let x = head l
+Prelude> let xs = tail l
+Prelude> x
+1
+Prelude> xs
+[2,3]
+Prelude> let (x:xs) = l
+Prelude> x
+1
+Prelude> xs
+[2,3]
+Prelude> let x = head l
+Prelude>  let xs = tail l
+Prelude> x
+1
+Prelude> xs
+[2,3]
+Prelude> x:xs
+[1,2,3]
+Prelude> let x:xs = l
+Prelude> x
+1
+Prelude> xs
+[2,3]
+Prelude> xs
+[2,3]
+Prelude> Leaving GHCi.
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+Linking test ...
+Cases: 6  Tried: 6  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+Linking test ...
+### Error in:   1:0:Soma lista de um elemento
+Prelude.head: empty list
+### Error in:   1:1:Soma lista de um elemento com valor diferente
+Prelude.head: empty list
+Cases: 6  Tried: 6  Errors: 2  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+Linking test ...
+### Failure in: 1:3:Soma lista com mais de dois elementos
+expected: 8
+ but got: 4
+Cases: 7  Tried: 7  Errors: 0  Failures: 1
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+### Failure in: 1:3:Soma lista com mais de dois elementos
+expected: 8
+ but got: 4
+Cases: 7  Tried: 7  Errors: 0  Failures: 1
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+Linking test ...
+Cases: 7  Tried: 7  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+Linking test ...
+Cases: 7  Tried: 7  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+Linking test ...
+Cases: 7  Tried: 7  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[2 of 2] Compiling Main             ( Tests.hs, Tests.o )
+Linking test ...
+### Error in:   1:0:Soma lista vazia      
+Dojo49.hs:(8,0)-(9,24): Non-exhaustive patterns in function soma
+
+Cases: 8  Tried: 8  Errors: 1  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+Linking test ...
+Cases: 8  Tried: 8  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghc --make Tests.hs -o test && ./test 
+[1 of 2] Compiling Dojo49           ( Dojo49.hs, Dojo49.o )
+Linking test ...
+Cases: 8  Tried: 8  Errors: 0  Failures: 0
+ticolucci@logiciel 49-haskell-intro$ ghci
+GHCi, version 6.8.2: http://www.haskell.org/ghc/  :? for help
+Loading package base ... linking ... done.
+Prelude> 
+Prelude> 
+Prelude> let l = [1, 2, 3, 4]
+Prelude> l
+[1,2,3,4]
+Prelude> :t foldr 
+foldr :: (a -> b -> b) -> b -> [a] -> b
+Prelude> :t +
+<interactive>:1:0: parse error on input `+'
+Prelude> :t (+)
+(+) :: (Num a) => a -> a -> a
+Prelude> soma 3
+
+<interactive>:1:0: Not in scope: `soma'
+Prelude> :l Dojo49
+Ok, modules loaded: Dojo49.
+Prelude Dojo49> (+) 2 3
+5
+Prelude Dojo49> :t (+)
+(+) :: (Num a) => a -> a -> a
+Prelude Dojo49> :t (+ 5)
+(+ 5) :: (Num a) => a -> a
+Prelude Dojo49> :t ((+ 5) 3)
+((+ 5) 3) :: (Num a) => a
+Prelude Dojo49> ((+ 5) 3)
+8
+Prelude Dojo49> (( 5 +) 3)
+8
+Prelude Dojo49> (( 5 +) 3)
+8
+Prelude Dojo49> 
+Prelude Dojo49> (( 5 ) 3)
+
+<interactive>:1:3:
+    No instance for (Num (t -> t1))
+      arising from the literal `5' at <interactive>:1:3
+    Possible fix: add an instance declaration for (Num (t -> t1))
+    In the expression: ((5) 3)
+    In the definition of `it': it = ((5) 3)
+Prelude Dojo49> (+ 5  3)
+
+<interactive>:1:3:
+    No instance for (Num (t -> a))
+      arising from the literal `5' at <interactive>:1:3-6
+    Possible fix: add an instance declaration for (Num (t -> a))
+    In the second argument of `(+)', namely `5 3'
+    In the expression: (+ 5 3)
+    In the definition of `it': it = (+ 5 3)
+Prelude Dojo49> :t (5+)
+(5+) :: (Num t) => t -> t
+Prelude Dojo49> :t (+5)
+(+5) :: (Num a) => a -> a
+Prelude Dojo49> :t (+)
+(+) :: (Num a) => a -> a -> a
+Prelude Dojo49> :t ()
+() :: ()
+Prelude Dojo49> :t (/)
+(/) :: (Fractional a) => a -> a -> a
+Prelude Dojo49> 5/3
+1.6666666666666667
+Prelude Dojo49> (/ 5)
+
+<interactive>:1:0:
+    No instance for (Show (a -> a))
+      arising from a use of `print' at <interactive>:1:0-4
+    Possible fix: add an instance declaration for (Show (a -> a))
+    In the expression: print it
+    In a 'do' expression: print it
+Prelude Dojo49> ;t (/ 5)
+<interactive>:1:0: parse error on input `;'
+Prelude Dojo49> :t (/ 5)
+(/ 5) :: (Fractional a) => a -> a
+Prelude Dojo49> :t (/ 5)
+(/ 5) :: (Fractional a) => a -> a
+Prelude Dojo49> ((/ 5) 3)
+0.6
+Prelude Dojo49> ((5 /) 3)
+1.6666666666666667
+Prelude Dojo49> ((5 (/)) 3)
+
+<interactive>:1:2:
+    No instance for (Num ((a -> a -> a) -> t -> t1))
+      arising from the literal `5' at <interactive>:1:2-6
+    Possible fix:
+      add an instance declaration for (Num ((a -> a -> a) -> t -> t1))
+    In the expression: ((5 (/)) 3)
+    In the definition of `it': it = ((5 (/)) 3)
+Prelude Dojo49> ((5 /) 3)
+1.6666666666666667
+Prelude Dojo49> :r
+[1 of 1] Compiling Dojo49           ( Dojo49.hs, interpreted )
+Ok, modules loaded: Dojo49.
+Prelude Dojo49> func 2 'a'
+2
+Prelude Dojo49> 2 `func` a
+
+<interactive>:1:9: Not in scope: `a'
+Prelude Dojo49> 2 `func` 'a'
+2
+Prelude Dojo49> :t (func 2)
+(func 2) :: Char -> Integer
+Prelude Dojo49> ((func 2) 'a')
+2
+Prelude Dojo49> ((func ) 'a')
+
+<interactive>:1:9:
+    Couldn't match expected type `Integer' against inferred type `Char'
+    In the first argument of `(func)', namely 'a'
+    In the expression: ((func) 'a')
+    In the definition of `it': it = ((func) 'a')
+Prelude Dojo49> ((2 `func` ) 'a')
+2
+Prelude Dojo49> ((2 `func`) 'a')
+2
+Prelude Dojo49> (/) 5 3
+1.6666666666666667
+Prelude Dojo49> / 5 3
+<interactive>:1:0: parse error on input `/'
+Prelude Dojo49> (/) 5 3
+1.6666666666666667
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> l
+
+<interactive>:1:0: Not in scope: `l'
+Prelude Dojo49> let l = [1,2,3,4]
+Prelude Dojo49> l
+[1,2,3,4]
+Prelude Dojo49> soma l
+10
+Prelude Dojo49> :t foldr
+foldr :: (a -> b -> b) -> b -> [a] -> b
+Prelude Dojo49> let soma2 l = (+) 
+Prelude Dojo49> let soma2 l = foldr (+) 0 l
+Prelude Dojo49> soma2 l
+10
+Prelude Dojo49> let soma2 l = foldr (+) 10 l
+Prelude Dojo49> soma2 l
+20
+Prelude Dojo49> let soma2 l = foldr (+) 3 l
+Prelude Dojo49> soma2 l
+13
+Prelude Dojo49> let soma2 = foldr (+) 3
+Prelude Dojo49> :t soma2
+soma2 :: [Integer] -> Integer
+Prelude Dojo49> let soma2 zero = foldr (+) zero [1,2,3]
+Prelude Dojo49> soma2 5
+11
+Prelude Dojo49> soma2 2
+8
+Prelude Dojo49> let soma2 = foldr (+) [1,2,3]
+
+<interactive>:1:18:
+    No instance for (Num [t])
+      arising from a use of `+' at <interactive>:1:18-20
+    Possible fix: add an instance declaration for (Num [t])
+    In the first argument of `foldr', namely `(+)'
+    In the expression: foldr (+) [1, 2, 3]
+    In the definition of `soma2': soma2 = foldr (+) [1, 2, 3]
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> 
+Prelude Dojo49> let div1 = foldr (/) 1
+Prelude Dojo49> div1 [100, 2, 5]
+250.0
+Prelude Dojo49> div1 [100]
+100.0
+Prelude Dojo49> div1 [100, 2]
+50.0
+Prelude Dojo49> div1 [100, 2, 5]
+250.0
+Prelude Dojo49> div1 [100, 10, 5]
+50.0
+Prelude Dojo49> let div2 = foldl (/) 100
+Prelude Dojo49> div2 [100]
+1.0
+Prelude Dojo49> div2 [10]
+10.0
+Prelude Dojo49> div2 [10, 5]
+2.0
+Prelude Dojo49> div2 [10, 5, 2]
+1.0
+Prelude Dojo49> let aumentaCase str = map Char.toUpperCase str
+
+<interactive>:1:26: Not in scope: `Char.toUpperCase'
+Prelude Dojo49> let aumentaCase str = map Char.toUpper str
+Prelude Dojo49> aumentaCase "Olaaa"
+"OLAAA"
+Prelude Dojo49> :t map
+map :: (a -> b) -> [a] -> [b]
+Prelude Dojo49> let aumentaCase = map Char.toUpper
+Prelude Dojo49> aumentaCase "Olaaa"
+"OLAAA"
+Prelude Dojo49> let filtraCase = filter Char.isUpper
+Prelude Dojo49> filtraCase "OLLaaaa"
+"OLL"
+Prelude Dojo49> let filtraCase = filter Char.isLower
+Prelude Dojo49> filtraCase "OLLaaaa"
+"aaaa"
+Prelude Dojo49> :filter
+unknown command ':filter'
+use :? for help.
+Prelude Dojo49> :t filter
+filter :: (a -> Bool) -> [a] -> [a]
+Prelude Dojo49> 
+

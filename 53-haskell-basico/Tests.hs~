@@ -1,0 +1,15 @@
+module Main where
+
+import Test.HUnit
+import Basicas
+
+main = runTestTT testes
+
+testes = TestList [testeMapeia]
+
+testeMapeia =
+    TestList
+    [
+     "Mapeia de lista vazia é lista vazia" ~:
+     [] ~=? mapeia [] (+ 5)
+    ]

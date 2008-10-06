@@ -5,7 +5,7 @@ import TresNmaisUm
 
 main = runTestTT testes
 
-testes = TestList [testeProximoNumero, testeContaTamanhoDoCiclo]
+testes = TestList [testeProximoNumero, testeContaTamanhoDoCiclo, testeMaiorCicloNoIntervaloEntreIeJ]
 
 testeProximoNumero =
     TestList
@@ -33,4 +33,11 @@ testeContaTamanhoDoCiclo=
     ciclo 3 ~?= 7
     ,"Ciclo de 7 eh 16" ~:
     ciclo 7 ~?= 16
+    ]
+
+testeMaiorCicloNoIntervaloEntreIeJ =
+    TestList
+    [
+     "Maior ciclo no intervalo entre 1 e 1 deveria ser 0" ~:
+     maiorCicloEntre 1 1 ~?= 0
     ]

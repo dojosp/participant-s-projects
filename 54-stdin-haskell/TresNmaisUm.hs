@@ -1,4 +1,4 @@
 module TresNmaisUm where
 
-proximo 4 = 2
-proximo _ = 1
+proximo :: Int -> Int
+proximo x = x `div` 2

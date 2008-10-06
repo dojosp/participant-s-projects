@@ -7,5 +7,4 @@ proximo x | even x = x `div` 2
 ciclo 1 = 0
 ciclo n = 1 + ciclo (proximo n)
 
-maiorCicloEntre _ 2 = 1
-maiorCicloEntre _ _ = 0
+maiorCicloEntre _ n = n-1

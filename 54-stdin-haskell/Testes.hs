@@ -16,4 +16,6 @@ testeProximoNumero =
      proximo 4 ~?= 2
     ,"Proximo numero depois 3 deveria ser 10" ~:
      proximo 3 ~?= 10
+    ,"Proximo numero depois 5 deveria ser 16" ~:
+     proximo 5 ~?= 16
     ]

@@ -5,7 +5,7 @@ import TresNmaisUm
 
 main = runTestTT testes
 
-testes = TestList [testeProximoNumero]
+testes = TestList [testeProximoNumero, testeContaTamanhoDoCiclo]
 
 testeProximoNumero =
     TestList
@@ -18,4 +18,11 @@ testeProximoNumero =
      proximo 3 ~?= 10
     ,"Proximo numero depois 5 deveria ser 16" ~:
      proximo 5 ~?= 16
+    ]
+
+testeContaTamanhoDoCiclo=
+    TestList
+    [
+    "Ciclo de 1 eh 0" ~:
+    ciclo 1 ~?= 0
     ]

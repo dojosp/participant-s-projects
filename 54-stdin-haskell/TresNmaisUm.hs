@@ -1,6 +1,5 @@
 module TresNmaisUm where
 
 proximo :: Int -> Int
-proximo 3 = 10
-proximo 5 = 16
-proximo x = x `div` 2
+proximo x | even x = x `div` 2
+          | otherwise = 3 * x + 1

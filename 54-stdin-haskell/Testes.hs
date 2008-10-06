@@ -59,4 +59,6 @@ testeMaiorCicloNoIntervaloEntreIeJ' =
     [
      "Maior ciclo deve parsear a string '1 1'" ~:
      maiorCicloEntre' "1 1" ~?= (maiorCicloEntre 1 1)
+    ,"Maior ciclo deve parsear a string '1 3'" ~:
+     maiorCicloEntre' "1 3" ~?= (maiorCicloEntre 1 3)
     ]

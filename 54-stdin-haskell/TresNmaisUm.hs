@@ -11,5 +11,10 @@ maiorCicloEntre i j | i == j = ciclo i
                     | i <  j = max (ciclo j) (maiorCicloEntre i (j-1))
                     | otherwise = maiorCicloEntre j i
 
-maiorCicloEntre' [a,b,c] = maiorCicloEntre (read [a]) (read [c])
-
+maiorCicloEntre' s =
+    let
+        dupla = span (/= ' ') s
+        i' = fst dupla
+        j' = snd dupla
+    in
+      maiorCicloEntre (read i') (read j')

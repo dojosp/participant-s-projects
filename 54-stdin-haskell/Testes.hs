@@ -44,4 +44,6 @@ testeMaiorCicloNoIntervaloEntreIeJ =
      maiorCicloEntre 1 2 ~?= 1
     ,"Maior ciclo no intervalo entre 2 e 1 deveria ser 1" ~:
      maiorCicloEntre 2 1 ~?= 1
+    ,"Maior ciclo no intervalo entre 2 e 2 deveria ser 1" ~:
+     maiorCicloEntre 2 2 ~?= 1
     ]

@@ -10,3 +10,5 @@ ciclo n = 1 + ciclo (proximo n)
 maiorCicloEntre i j | i == j = ciclo i
                     | i <  j = max (ciclo j) (maiorCicloEntre i (j-1))
                     | otherwise = maiorCicloEntre j i
+
+maiorCicloEntre' _ = maiorCicloEntre 1 1

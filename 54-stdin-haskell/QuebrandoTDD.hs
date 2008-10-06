@@ -6,4 +6,6 @@ import IO
 main = do
   hSetBuffering stdin LineBuffering
   linha <- getLine
-  putStrLn ( maiorCicloEntre' linha)
+  putStr (linha ++ " ")
+  putStrLn (show ((maiorCicloEntre' linha) + 1))
+  main

@@ -29,4 +29,6 @@ testeContaTamanhoDoCiclo=
     ciclo 2 ~?= 1
     ,"Ciclo de 4 eh 2" ~:
     ciclo 4 ~?= 2
+    ,"Ciclo de 3 eh 7" ~:
+    ciclo 3 ~?= 7
     ]

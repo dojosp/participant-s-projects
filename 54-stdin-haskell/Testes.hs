@@ -25,4 +25,6 @@ testeContaTamanhoDoCiclo=
     [
     "Ciclo de 1 eh 0" ~:
     ciclo 1 ~?= 0
+    ,"Ciclo de 2 eh 1" ~:
+    ciclo 2 ~?= 1
     ]

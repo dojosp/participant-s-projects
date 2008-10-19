@@ -1,0 +1,12 @@
+module Main where
+
+import Test.HUnit
+
+main=runTestTT tests
+
+tests=TestList [test1]
+
+test1 = TestList[
+         "Test for a bomb" ~:
+         1 ~=? 1
+]

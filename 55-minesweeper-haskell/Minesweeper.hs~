@@ -1,0 +1,3 @@
+module Minesweeper where 
+
+find_bomb = 1

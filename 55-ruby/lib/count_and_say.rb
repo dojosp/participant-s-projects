@@ -25,5 +25,5 @@ class CountAndSay
 end
 
 def number_of(char , string)
-  1
+  string.length
 end

@@ -28,5 +28,9 @@ describe 'count-and-say' do
   it "should count one '1' in 1" do
     number_of('1', "1").should == 1
   end
+  
+  it "should count one '1' in 1" do
+    number_of('1', "11").should == 2
+  end
 
 end

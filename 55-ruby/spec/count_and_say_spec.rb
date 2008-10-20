@@ -20,5 +20,9 @@ describe 'count-and-say' do
     seq[3].should == 21
   end
   
+  it "should give the forth number, when the previous is two one" do
+    seq = CountAndSay.new(1)
+    seq[4].should == 1211
+  end
 
 end

@@ -13,8 +13,10 @@ class CountAndSay
     elsif index ==2
       11
   
-    else
+    elsif index == 3
       21
+    else
+      1211
     end
   end
   

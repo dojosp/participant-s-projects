@@ -14,5 +14,10 @@ describe 'count-and-say' do
     seq[2].should == 11
   end
   
+  it "should give third number , when the previous is one one" do
+    seq = CountAndSay.new(11)
+    seq[3].should == 21
+  end
+  
 
 end

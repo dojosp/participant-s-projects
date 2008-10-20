@@ -1,10 +1,13 @@
 class CountAndSay
   
-  def initialize(first)
-  end
+  attr_accessor :first
   
-  def first
-    1
+  def initialize(first)
+    @first = first
+  end
+    
+  def second
+    11
   end
   
 end

@@ -9,4 +9,9 @@ describe 'count-and-say' do
     seq.first.should == 1
   end
 
+  it "should give the second number, when the firs is one" do
+    seq = CountAndSay.new(1)
+    seq.second.should == 11
+  end
+
 end

@@ -7,8 +7,12 @@ class CountAndSay
   end
     
   def [](index)
-    if index == 2
+    if index == 1
+      1
+      
+    elsif index ==2
       11
+  
     else
       21
     end

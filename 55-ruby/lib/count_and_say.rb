@@ -17,8 +17,8 @@ class CountAndSay
       second_term.to_i
     else
       third_term = self[3].to_s
-      third_term = "1" + third_term + "1"
-      third_term.to_i
+      fourth_term = "1" + third_term + "1"
+      fourth_term.to_i
     end
   end
   

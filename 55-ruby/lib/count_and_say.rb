@@ -6,7 +6,7 @@ class CountAndSay
     @first = first
   end
     
-  def second
+  def [](index)
     11
   end
   

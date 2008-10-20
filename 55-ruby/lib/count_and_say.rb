@@ -16,7 +16,9 @@ class CountAndSay
       second_term[0,1] = '2'
       second_term.to_i
     else
-      1211
+      third_term = self[3].to_s
+      third_term = "1" + third_term + "1"
+      third_term.to_i
     end
   end
   

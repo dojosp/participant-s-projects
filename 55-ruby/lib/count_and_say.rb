@@ -10,7 +10,7 @@ class CountAndSay
     if index == 1
       @first
     elsif index == 2
-      10+@first
+      ('1' + self[1].to_s).to_i
     elsif index == 3
       21
     else

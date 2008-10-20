@@ -8,11 +8,9 @@ class CountAndSay
     
   def [](index)
     if index == 1
-      1
-      
-    elsif index ==2
-      11
-  
+      @first
+    elsif index == 2
+      10+@first
     elsif index == 3
       21
     else

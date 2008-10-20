@@ -24,5 +24,9 @@ describe 'count-and-say' do
     seq = CountAndSay.new(1)
     seq[4].should == 1211
   end
+  
+  it "should count one '1' in 1" do
+    number_of('1', "1").should == 1
+  end
 
 end

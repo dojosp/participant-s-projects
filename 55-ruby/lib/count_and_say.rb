@@ -22,5 +22,8 @@ class CountAndSay
     end
   end
   
-  
+end
+
+def number_of(char , string)
+  1
 end

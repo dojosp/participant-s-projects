@@ -12,10 +12,11 @@ class CountAndSay
     elsif index <= 3
       (number_of(@first.to_s, self[index-1].to_s).to_s + '1').to_i
     else
-    
-      number_of_twos = number_of("2", self[index-1].to_s).to_s
-      number_of_ones = number_of("1", self[index-1].to_s).to_s  
-      fourth_term = number_of_twos + "2" + number_of_ones + "1"
+      last_step = self[index-1].to_s
+      fourth_term = ""
+      last_step.split("").each do |c|
+        fourth_term += number_of(c, last_step).to_s + c 
+      end
       
       fourth_term.to_i
     end

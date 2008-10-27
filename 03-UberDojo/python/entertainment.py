@@ -7,3 +7,6 @@ class Tabuleiro:
     
     def pega_tabuleiro(self):
         return self.matriz
+        
+    def remove(self,linha,coluna):
+        self.matriz[linha][coluna]=''

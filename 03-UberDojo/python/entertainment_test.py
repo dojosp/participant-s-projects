@@ -28,5 +28,11 @@ class TestEntertainment(unittest.TestCase):
         t.insere_linha('cacaba')
         self.assertEquals(t.pega_tabuleiro(), [['b','a','b','a','c','a'],['c','a','c','a','b','a']])
         
+    def test_tirar_um_elemento_de_matriz_2x2(self):
+        t = Tabuleiro(1,1)
+        t.insere_linha('ba')
+        t.insere_linha('bb')
+        t.remove(0,1)
+        self.assertEquals(t.pega_tabuleiro(),[['b',''],['b','b']])
 
 unittest.main()

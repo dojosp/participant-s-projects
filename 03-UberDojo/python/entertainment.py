@@ -10,6 +10,7 @@ class Tabuleiro:
         
     
     def deslocaEsquerda(self):    
+        
         self.matriz[0][0] = 'b'
         self.matriz[0][1] = ''
         return self.matriz

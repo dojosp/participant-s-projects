@@ -38,5 +38,9 @@ class TestEntertainment(unittest.TestCase):
         self.t.remove(0,0)
         self.assertEquals(self.t.pega_tabuleiro(),[['b',''],['b','b']])
     
+    def test_desloca_para_a_esquerda(self):
+        self.t.insere_linha('a ab')
+        self.t.deslocaEsquerda()
+        self.assertEquals(self.t.pega_tabuleiro(),[['a','a','b']])
 
 unittest.main()

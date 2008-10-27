@@ -6,4 +6,6 @@ class Tabuleiro:
         self.linha = linha
     
     def pega_tabuleiro(self):
-        return [[self.linha]]
+        i=len(self.linha)
+        for self.linha[i]
+        return [[self.linha[0],self.linha[1]]]

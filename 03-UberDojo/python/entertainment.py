@@ -10,9 +10,9 @@ class Tabuleiro:
         
     
     def deslocaEsquerda(self):    
-        
-        self.matriz[0][0] = 'b'
-        self.matriz[0][1] = ''
+        for i,char in enumerate(self.matriz[0]):
+            if(self.matriz[0][i] == ' '):
+                self.matriz[0].pop(i)
         return self.matriz
         
     def remove(self,linha,coluna):

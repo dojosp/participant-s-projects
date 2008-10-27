@@ -13,4 +13,8 @@ testeGravitaParaAEsquerda = TestList
   gravitaEsquerda [['a', ' ']] ~?= [['a', ' ']]
   ,"Um elemento a direita fica a esquerda" ~:
   gravitaEsquerda [[' ', 'a']] ~?= [['a', ' ']]
+  ,"Outro elemento a esquerda fica a esquerda" ~:
+  gravitaEsquerda [['b', ' ']] ~?= [['b', ' ']]
+  ,"Outro elemento a direita fica a esquerda" ~:
+  gravitaEsquerda [[' ', 'b']] ~?= [['b', ' ']]
   ]

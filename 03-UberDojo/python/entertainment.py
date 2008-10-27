@@ -8,5 +8,12 @@ class Tabuleiro:
     def pega_tabuleiro(self):
         return self.matriz
         
+    
+    def deslocaEsquerda(self):    
+        self.matriz[0][0] = 'b'
+        self.matriz[0][1] = ''
+        return self.matriz
+        
     def remove(self,linha,coluna):
         self.matriz[linha][coluna] = ''
+        return self.deslocaEsquerda()

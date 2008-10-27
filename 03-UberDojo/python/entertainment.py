@@ -1,11 +1,9 @@
 class Tabuleiro:
     def __init__(self, linhas, colunas):
-        pass
+        self.matriz = []
     
     def insere_linha(self, linha):
-        self.linha = linha
+        self.matriz.append(list(linha)) 
     
     def pega_tabuleiro(self):
-        i=len(self.linha)
-        for self.linha[i]
-        return [[self.linha[0],self.linha[1]]]
+        return self.matriz

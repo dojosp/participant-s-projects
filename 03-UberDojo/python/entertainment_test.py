@@ -17,5 +17,16 @@ class TestEntertainment(unittest.TestCase):
         t.insere_linha('ba')
         self.assertEquals(t.pega_tabuleiro(), [['b','a']])
 
+    def test_cria_tabuleiro_com_linha_com_seis_elementos(self):
+        t = Tabuleiro(1,6)
+        t.insere_linha('babaca')
+        self.assertEquals(t.pega_tabuleiro(), [['b','a','b','a','c','a']])
+    
+    def test_cria_tabuleiro_com_duas_linhas(self):
+        t = Tabuleiro(2,6)
+        t.insere_linha('babaca')
+        t.insere_linha('cacaba')
+        self.assertEquals(t.pega_tabuleiro(), [['b','a','b','a','c','a'],['c','a','c','a','b','a']])
+        
 
 unittest.main()

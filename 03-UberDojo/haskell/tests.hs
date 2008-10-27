@@ -25,4 +25,7 @@ testeGravitaParaAEsquerda = TestList
   gravitaEsquerda [' ', 'a', 'a'] ~?= ['a', 'a', ' ']
   ,"Dois elementos separados numa lista ficam a esquerda" ~:
   gravitaEsquerda ['a', ' ', 'a'] ~?= ['a', 'a', ' ']
+  ,"Dois elementos diferentes separados numa lista ficam a esquerda" ~:
+  gravitaEsquerda ['a',' ','b'] ~?= ['a','b',' ']
+
   ]

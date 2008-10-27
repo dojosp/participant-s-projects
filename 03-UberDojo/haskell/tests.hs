@@ -21,4 +21,6 @@ testeGravitaParaAEsquerda = TestList
   gravitaEsquerda [' ', ' ', 'b'] ~?= ['b', ' ', ' ']
   ,"Um elemento a direita de uma lista de tres elementos fica a esquerda" ~:
   gravitaEsquerda [' ', ' ', 'a'] ~?= ['a', ' ', ' ']
+  ,"Dois elemento a direita de uma lista ficam a esquerda" ~:
+  gravitaEsquerda [' ', 'a', 'a'] ~?= ['a', 'a', ' ']
   ]

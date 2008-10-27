@@ -10,11 +10,15 @@ testes = TestList [testeGravitaParaAEsquerda]
 testeGravitaParaAEsquerda = TestList
   [
   "Um elemento a esquerda fica a esquerda" ~:
-  gravitaEsquerda [['a', ' ']] ~?= [['a', ' ']]
+  gravitaEsquerda ['a', ' '] ~?= ['a', ' ']
   ,"Um elemento a direita fica a esquerda" ~:
-  gravitaEsquerda [[' ', 'a']] ~?= [['a', ' ']]
+  gravitaEsquerda [' ', 'a'] ~?= ['a', ' ']
   ,"Outro elemento a esquerda fica a esquerda" ~:
-  gravitaEsquerda [['b', ' ']] ~?= [['b', ' ']]
+  gravitaEsquerda ['b', ' '] ~?= ['b', ' ']
   ,"Outro elemento a direita fica a esquerda" ~:
-  gravitaEsquerda [[' ', 'b']] ~?= [['b', ' ']]
+  gravitaEsquerda [' ', 'b'] ~?= ['b', ' ']
+  ,"Outro elemento a direita de uma lista de tres elementos fica a esquerda" ~:
+  gravitaEsquerda [' ', ' ', 'b'] ~?= ['b', ' ', ' ']
+  ,"Um elemento a direita de uma lista de tres elementos fica a esquerda" ~:
+  gravitaEsquerda [' ', ' ', 'a'] ~?= ['a', ' ', ' ']
   ]

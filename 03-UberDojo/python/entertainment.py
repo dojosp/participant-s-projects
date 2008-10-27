@@ -1,5 +1,5 @@
 class Tabuleiro:
-    def __init__(self, linhas, colunas):
+    def __init__(self):
         self.matriz = []
     
     def insere_linha(self, linha):
@@ -9,4 +9,4 @@ class Tabuleiro:
         return self.matriz
         
     def remove(self,linha,coluna):
-        self.matriz[linha][coluna]=''
+        self.matriz[linha][coluna] = ''

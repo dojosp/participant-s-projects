@@ -5,7 +5,7 @@ import Entertainement
 
 main = runTestTT testes
 
-testes = TestList [testeGravitaParaAEsquerda]
+testes = TestList [testeGravitaParaAEsquerda,testeGravitaTabuleiroEsquerda]
 
 testeGravitaParaAEsquerda = TestList
   [
@@ -27,5 +27,15 @@ testeGravitaParaAEsquerda = TestList
   gravitaEsquerda ['a', ' ', 'a'] ~?= ['a', 'a', ' ']
   ,"Dois elementos diferentes separados numa lista ficam a esquerda" ~:
   gravitaEsquerda ['a',' ','b'] ~?= ['a','b',' ']
+  ]
+
+testeGravitaTabuleiroEsquerda = TestList
+  [
+  "duas linhas, devem gravitar para esquerda" ~:
+  gravitaTabuleiroEsquerda [[' ','b'],[' ','b']] ~?= [['b', ' '], ['b', ' ']]
+
+  ,"tres linhas, devem gravitar para esquerda" ~:
+  gravitaTabuleiroEsquerda [[' ','b'],[' ','b'], [' ', 'a']] ~?=
+                               [['b', ' '], ['b', ' '], ['a', ' ']]
 
   ]

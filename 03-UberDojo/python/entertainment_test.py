@@ -41,6 +41,6 @@ class TestEntertainment(unittest.TestCase):
     def test_desloca_para_a_esquerda(self):
         self.t.insere_linha('a ab')
         self.t.deslocaEsquerda()
-        self.assertEquals(self.t.pega_tabuleiro(),[['a','a','b']])
+        self.assertEquals(self.t.pega_tabuleiro(),[['a','a','b','']])
 
 unittest.main()

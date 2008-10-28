@@ -1,0 +1,67 @@
+
+    * Data: 22/09/2008
+    * Participantes: Thiago, R, Hugo, Mari, Leo , Yoshi e Breno
+    * Randori: Problema Setun (ou conhecido também chamado de Trits original), retirado da segunda seletiva da XII Maratona de Programação da USP. Utilizamos Haskell com HUnit
+    * Carta de criatividade: “Find What's out of Whack”
+    * Código: estará no GitHub assim que o Thiago resolver alguns pequenos problemas em seu PC.
+
+O problema: receber um número inteiro e devolver sua representação em uma base ternária, cujos algarismos válidos são “+”, “0″ e “-” (de valor, respectivamente, 1, 0 e -1). Um número nesta base ternária (ou seja, um “trit”) representado como a1a2…ak tem valor igual a a1*3^k + a2*3^(k-1) + … + ak-1*3^1 + ak*3^0. Por exemplo, o trit “+0-” tem valor 1*3^2 + 0*3^1 + (-1)*3^0 = 8.
+
+Após resolvermos em um dojo passado o problema inverso, ou seja, dado um número formado por Trits, convertê-lo para a base decimal, resolvemos encarar o problema original (denominado de Setun).
+
+Iniciamos uma pequena discussão de qual seria o approach ideal. Assim ficou decidido que necessitaríamos de uma função que dado um número, retornasse a maior potência de três deste número. Começamos daí.
+
+Codando
+
+Apesar do approach mandar fazermos uma função que nos dava a maior potência de três de um número, ficou muito claro para todos que, na verdade, cada um tinha entendido uma coisa do que fazer de verdade. Portanto os primeiros a codarem levaram o problema para o lado de que a maior potência era o maior expoente com base três que coubesse no número dado. No entanto os que vieram depois entenderam que era o resultado de três elevado a este expoente.
+Esta confusão no levou a um impasse de tal forma que chegou um momento que todos estavam "palpitando" no código, e os "coders" lá da frente ficaram perdidos e travados.
+Foi então que percebemos que havia algo muito errado, mas não paramos para tomar nenhuma atitude. Ao invés disso seguimos em frente com testes e código.
+Mas já era tarde e não evoluímos muito mais, terminamos com uma função que devolvia  potência propriamente dita e não o expoente de três.
+Além desta função, não andamos muito na resolução do problema propriamente dito.
+
+
+Retrospectiva
+
+Como tínhamos decidido no dojo anterior, iríamos pensar mais nos problemas do dojo (Post-its vermelhos) do que nas coisas que estão andando bem.
+
+Dentre os pontos positivos mencionados:
+
+-Elogios à Haskell, principalmente ao fato de podermos escrever "x | x < 3" lendo x, tal que x menor que 3;
+
+-Atalhos do Emacs;
+
+-O equipamento de modelar vidro finalmente chegou para o Yoshi, ampulheta do Dojo em breve;
+
+-Aprendemos bastante sobre o problema;
+
+-Fizemos um git reverse na mão;
+
+
+
+Dos pontos negativos, foram citados:
+
+-Não definimos e seguimos um approach único;
+
+-Atrasos de pessoas;
+
+-git revert não funcionou;
+
+-Deveríamos usar o TAB no Emacs, ele identa;
+
+-Perdemos tempo pensando em otimizações, ou pensando nelas;
+
+-Desatenção fez com que escrevêssemos testes "inúteis";
+
+-"O que fazer quando os testes saem dos trilhos?";
+
+-Pessoas perdidas durante a resolução;
+
+-Planejamento foi furado;
+
+
+
+Ficamos ainda com algumas discussões para o Parking lot, como sempre.
+
+-TV Dojo: Muitas pessoas de fora do dojo estão nos precionando para criarmos algum vídeo para que eles possam assistir como é o nosso Dojo. Ficou decidido que iríamos dar um jeito de arrumar ao menos duas câmeras para filmarmos uma sessão, sessão esta que seria uma espécie de Randori//Kata, pois iríamos resolver um problema já conhecido e de fácil entendimento para todos, mas seria resolvido no estilo Randori.
+
+-Dojo em silêncio é igual a Dojo pouco produtivo? A resposta geral foi não. O fato do problema ser "enrolado" e o approach-mal-desenhado foi o que gerou o silêncio e o pouco desenvolvimento de código, a lição foi: problema simples (pequeno) não significa problema fácil.

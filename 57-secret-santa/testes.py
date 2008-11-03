@@ -8,4 +8,15 @@ class Testes(unittest.TestCase):
 				 "Darth Vader": "Luke Skywalker",}
 		self.assertEquals(sorteia(entrada), saida)
 
+	def testTresPessoasDeFamiliasDistintas(self):
+		entrada = ["Luke Skywalker", "Darth Vader",
+                   "Lea Organa"]
+		saida = {"Luke Skywalker": "Darth Vader",
+				  "Darth Vader": "Lea Organa",
+                  "Lea Organa": "Luke Skywalker",}
+
+		self.assertEquals(sorteia(entrada), saida)
+
+
 unittest.main()
+

@@ -1,8 +1,10 @@
 import unittest
 from santa import sorteia
 
-def sorteiaMesmaFamilia(dicionario):
-	return True
+def familiasDiferentes(dicionario):
+	nome = dicionario.keys()[0]
+	amigo = dicionario[nome]
+	return nome.split()[1] != amigo.split()[1]
 
 class Testes(unittest.TestCase):
 	def testDuasPessoasDeFamiliasDiferentes(self):
@@ -53,7 +55,9 @@ class Testes(unittest.TestCase):
 
 	def testNaoSortearPessoaDaMesmaFamilia(self):
 		entrada = {"Luke Skywalker": "Darth Vader",}
-		assert sorteiaMesmaFamilia(entrada)
+		assert familiasDiferentes(entrada)
+		entrada = {"Luke Skywalker": "Lea Skywalker",}
+		assert not familiasDiferentes(entrada)
 
 unittest.main()
 

@@ -11,12 +11,38 @@ class Testes(unittest.TestCase):
 	def testTresPessoasDeFamiliasDistintas(self):
 		entrada = ["Luke Skywalker", "Darth Vader",
                    "Lea Organa"]
-		saida = {"Luke Skywalker": "Darth Vader",
+		saidas = [{"Luke Skywalker": "Darth Vader",
 				  "Darth Vader": "Lea Organa",
-                  "Lea Organa": "Luke Skywalker",}
+                  "Lea Organa": "Luke Skywalker",},
+                 {"Luke Skywalker": "Lea Organa",
+				  "Darth Vader": "Luke Skywalker",
+                  "Lea Organa": "Darth Vader",},]
+		assert sorteia(entrada) in saidas
 
-		self.assertEquals(sorteia(entrada), saida)
-
+	def testQuatroPessoasComFamiliasDistintas(self):
+		entrada = ["Luke Skywalker", "Darth Vader",
+                   "Lea Organa", "Master Yoda"]
+		saidas = [{"Luke Skywalker": "Darth Vader",
+				  "Darth Vader": "Lea Organa",
+                  "Lea Organa": "Master Yoda",
+				  "Master Yoda" : "Luke Skywalker",},
+				{"Luke Skywalker": "Lea Organa",
+                  "Lea Organa": "Master Yoda",
+				  "Master Yoda": "Darth Vader",
+				  "Darth Vader" : "Luke Skywalker",},
+				{"Luke Skywalker": "Master Yoda",
+				  "Master Yoda": "Darth Vader",
+                  "Darth Vader" : "Lea Organa",
+				  "Lea Organa" : "Luke Skywalker",},
+				{"Luke Skywalker": "Darth Vader",
+				  "Darth Vader": "Master Yoda",
+				  "Master Yoda" : "Lea Organa",
+                  "Lea Organa": "Luke Skywalker",},
+				{"Luke Skywalker": "Darth Vader",
+				  "Darth Vader": "Luke Skywalker",
+				  "Master Yoda" : "Lea Organa",
+                  "Lea Organa": "Master Yoda",},]
+		assert sorteia(entrada) in saidas
 
 unittest.main()
 

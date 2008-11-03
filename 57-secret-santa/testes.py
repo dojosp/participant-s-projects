@@ -1,10 +1,13 @@
 import unittest
 from santa import sorteia
 
+def sobrenome(pessoa):
+	return pessoa.split()[1]
+
 def familiasDiferentes(dicionario):
 	for pessoa in dicionario.keys():
 		amigo = dicionario[pessoa]
-		if pessoa.split()[1] == amigo.split()[1]:
+		if sobrenome(pessoa) == sobrenome(amigo):
 			return False
 	return True
 

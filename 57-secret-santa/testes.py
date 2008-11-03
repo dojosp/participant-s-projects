@@ -1,6 +1,14 @@
 import unittest
 from santa import sorteia
 
+def valoresNaoRepetem(entrada):
+	valoresAnteriores=[]
+	for valor in entrada.values():
+		if valor in valoresAnteriores:
+			return False
+		else: valoresAnteriores.append(valor)
+	return True
+
 def sobrenome(pessoa):
 	return pessoa.split()[1]
 
@@ -66,6 +74,11 @@ class Testes(unittest.TestCase):
 		entrada = {"Luke Skywalker": "Lea Organa",
 				   "Lea Organa": "Lea Organa",}
 		assert not familiasDiferentes(entrada)
+
+	def testValoresNaoRepetemNoDicionario(self):
+		entrada = {"Luke Skywalker": "Lea Organa",
+				   "Lea Organa": "Lea Organa",}
+		assert not valoresNaoRepetem(entrada)
 
 unittest.main()
 

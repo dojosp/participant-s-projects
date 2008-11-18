@@ -17,4 +17,7 @@ describe("Arabic number", {
     "should convert 5 to 'V'": function() {
         value_of((5).to_roman()).should_be("V")
     },
+    "should convert 6 to 'VI'": function() {
+        value_of((6).to_roman()).should_be("VI")
+    },
 })

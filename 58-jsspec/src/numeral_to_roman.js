@@ -5,6 +5,7 @@ Number.prototype.to_roman = function() {
     if(this in mapa) return mapa[this]
     var num = menor_que(this, mapa)
     if((this+num) in mapa) return num.to_roman() + (this+num).to_roman()
+    
     return num.to_roman() + (this-num).to_roman()
 }
 

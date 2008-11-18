@@ -20,4 +20,13 @@ describe("Arabic number", {
     "should convert 6 to 'VI'": function() {
         value_of((6).to_roman()).should_be("VI")
     },
+    "should convert 7 to 'VII'": function() {
+        value_of((7).to_roman()).should_be("VII")
+    },
+    "should convert 8 to 'VIII'": function() {
+        value_of((8).to_roman()).should_be("VIII")
+    },
+    "should convert 9 to 'IX'": function() {
+        value_of((9).to_roman()).should_be("IX")
+    },
 })

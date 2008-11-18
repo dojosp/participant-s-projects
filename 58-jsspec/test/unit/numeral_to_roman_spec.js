@@ -11,6 +11,9 @@ describe("Arabic number", {
     "should convert 3 to 'III'": function() {
         value_of((3).to_roman()).should_be("III")
     },
+    "should convert 4 to 'IV'": function() {
+        value_of((4).to_roman()).should_be("IV")
+    },
     "should convert 5 to 'V'": function() {
         value_of((5).to_roman()).should_be("V")
     },

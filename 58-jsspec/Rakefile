@@ -112,6 +112,11 @@ JavaScriptTestTask.new(:test_functionals, 4712) do |t|
   end
 end
 
+task :clean do
+  rm_rf File.join(APP_DIST_DIR, "#{APP_NAME}-#{APP_VERSION}.js")
+  rm_rf File.join(APP_DIST_DIR, "#{APP_NAME}.js")
+  rm_rf File.join(APP_PKG_DIR, "#{APP_NAME}-#{APP_VERSION}.tar.gz")
+end
 
 task :clean_package_source do
   rm_rf File.join(APP_PKG_DIR, "#{APP_NAME}-#{APP_VERSION}")

@@ -1,13 +1,10 @@
 58 Jsspec
 
 Description:
-    This JavaScript project ...
-
-Example:
-    ...
+    This JavaScript project is to demonstrate newjs, jsunittest and jsspec to the Coding Dojo@SP attendees.
 
 More information:
-    http://NOTE-ENTER-URL.com
+    http://dojosp.org
     
 Author:
-    FIXME full name, FIXME email
+    Hugo Corbucci, hugo dot corbucci at gmail dot com

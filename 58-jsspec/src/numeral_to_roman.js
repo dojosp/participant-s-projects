@@ -1,6 +1,4 @@
 Number.prototype.to_roman = function() {
-    var result = ""
-    for(i = 0; i < this; i++)
-        result += "I"
-    return result
+    if(this == 0) return ""
+    return "I" + (this-1).to_roman()
 }

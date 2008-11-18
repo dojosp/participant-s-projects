@@ -8,4 +8,10 @@ describe("Arabic number", {
     "should convert 2 to 'II'": function() {
         value_of((2).to_roman()).should_be("II")
     },
+    "should convert 3 to 'III'": function() {
+        value_of((3).to_roman()).should_be("III")
+    },
+    "should convert 5 to 'V'": function() {
+        value_of((5).to_roman()).should_be("V")
+    },
 })

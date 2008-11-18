@@ -29,4 +29,19 @@ describe("Arabic number", {
     "should convert 9 to 'IX'": function() {
         value_of((9).to_roman()).should_be("IX")
     },
+    "should convert 10 to 'X'": function() {
+        value_of((10).to_roman()).should_be("X")
+    },
+    "should convert 11 to 'XI'": function() {
+        value_of((11).to_roman()).should_be("XI")
+    },
+    "should convert 12 to 'XII'": function() {
+        value_of((12).to_roman()).should_be("XII")
+    },
+    "should convert 13 to 'XIII'": function() {
+        value_of((13).to_roman()).should_be("XIII")
+    },
+    "should convert 14 to 'XIV'": function() {
+        value_of((14).to_roman()).should_be("XIV")
+    },
 })

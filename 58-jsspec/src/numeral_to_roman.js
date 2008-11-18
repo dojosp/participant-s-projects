@@ -1,5 +1,5 @@
-mapa = {0:"", 1:"I", 5:"V"}
-lista = [0, 1, 5]
+mapa = {0:"", 1:"I", 5:"V", 10:"X"}
+lista = [0, 1, 5, 10]
 
 Number.prototype.to_roman = function() {
     if(this in mapa) return mapa[this]

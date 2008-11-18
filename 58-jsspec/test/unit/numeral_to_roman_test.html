@@ -38,16 +38,11 @@
       
     },
     
-    testTruth: function() { with(this) {
-      assert(true);
+    testConvert0ToEmpty: function() { with(this) {
+      assertEqual("", (0).to_roman());
     }}
       
   }, {testLog: "testlog"}); 
-  // For each Test.UnitRunner instance, specify the element id where results will be
-  // published; e.g. <div id="testlog"/> above.
-  // That is, you can have multiple "new Test.Unit.Runner() { ... }" on this page, just
-  // create more <div id="testlog2"></div> etc, and pass the element id to the hash above:
-  // e.g. {testLog: "testlog2"}
 // ]]>
 </script>
 </body>

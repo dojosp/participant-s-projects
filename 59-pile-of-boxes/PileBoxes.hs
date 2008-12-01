@@ -19,4 +19,4 @@ empilha _ _ = (Pilha [Box (1,1), Box (1,1)])
 junta :: Box -> Box -> Box
 junta (Box(alturaPedestal,larguraPedestal)) (Box(alturaCaixa,larguraCaixa))
 	| larguraPedestal < larguraCaixa =  Pedestal alturaPedestal (Box(alturaCaixa , larguraCaixa))
-    | otherwise =  BoxRecursivo (alturaPedestal, larguraPedestal) (Box(alturaCaixa , larguraCaixa))
+junta (Box dimensoes) box =  BoxRecursivo dimensoes box

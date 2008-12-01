@@ -4,6 +4,5 @@ data Pilha = Pilha [Box]
 data Box = Box (Int,Int)
 
 tamanho :: Pilha -> Int
-tamanho (Pilha [Box (2,1)]) = 2
-tamanho (Pilha [Box (1,1)]) = 1
+tamanho (Pilha [Box (altura,1)]) = altura
 tamanho _ = 0

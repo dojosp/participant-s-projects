@@ -16,5 +16,5 @@ empilha _ (Box (2,1)) = (Pilha [Box (1,1), Box (2,1)])
 empilha _ _ = (Pilha [Box (1,1), Box (1,1)])
 
 junta :: Box -> Box -> Box
-junta (Box(t)) box = BoxRecursivo t box
+junta (Box dimensoes) box = BoxRecursivo dimensoes box
 

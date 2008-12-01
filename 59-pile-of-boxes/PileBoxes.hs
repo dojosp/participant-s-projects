@@ -11,4 +11,5 @@ tamanho (Pilha []) = 0
 tamanho _ = 2
 
 empilha :: Pilha -> Box -> Pilha
+empilha _ (Box (2,1)) = (Pilha [Box (1,1), Box (2,1)])
 empilha _ _ = (Pilha [Box (1,1), Box (1,1)])

@@ -36,5 +36,5 @@ testeEmpilhaDuasCaixas = TestList
 testeJuntaDuasCaixas = TestList
 	[
 	 "Junta caixa 3x3 com outra 2x2" ~:
-	 junta (Box (3,3)) (Box (2,2)) ~?= (Box2 (3,3) (Box (2,2)))
+	 junta (Box (3,3)) (Box (2,2)) ~?= (BoxRecursivo (3,3) (Box (2,2)))
 	]

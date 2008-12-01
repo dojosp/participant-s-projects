@@ -3,7 +3,7 @@ module PileBoxes where
 data Pilha = Pilha [Box]
 			 deriving (Show, Eq)
 data Box = Box (Int,Int)
-		 | Box2 (Int,Int) Box
+		 | BoxRecursivo (Int,Int) Box
 			 deriving (Show, Eq)
 
 tamanho :: Pilha -> Int
@@ -16,4 +16,4 @@ empilha _ (Box (2,1)) = (Pilha [Box (1,1), Box (2,1)])
 empilha _ _ = (Pilha [Box (1,1), Box (1,1)])
 
 junta :: Box -> Box -> Box
-junta _ _ = Box2 (3,3) (Box (2,2))
+junta _ _ = BoxRecursivo (3,3) (Box (2,2))

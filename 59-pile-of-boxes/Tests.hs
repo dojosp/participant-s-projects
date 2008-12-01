@@ -5,7 +5,7 @@ import PileBoxes
 
 main = runTestTT testes
 
-testes = TestList[testePilhaVazia, testeUmaCaixa, testeDuasCaixas]
+testes = TestList[testePilhaVazia, testeUmaCaixa, testeDuasCaixas, testeEmpilhaDuasCaixas]
 
 testePilhaVazia = TestList
 	["Nenhuma caixa deveria ter tamanho 0" ~:
@@ -24,4 +24,9 @@ testeUmaCaixa = TestList
 testeDuasCaixas = TestList
 	["Pilha de duas caixas de tamanho 1x1 , 1x1 deveria ter tamanho 2" ~:
 	tamanho (Pilha [Box (1,1), Box (1,1)]) ~?= 2
+	]
+
+testeEmpilhaDuasCaixas = TestList
+	["Empilhar duas caixas de tamanho 1x1 , 1x1 deveria guardar em uma pilha" ~:
+	empilha (Pilha [Box (1,1)]) (Box (1,1)) ~?= (Pilha [Box (1,1), Box (1,1)])
 	]

@@ -17,4 +17,6 @@ testeUmaCaixa = TestList
 	tamanho (Pilha [Box (1,1)]) ~?= 1
 	,"Pilha de uma caixa de tamanho 2x1 deveria ter tamanho 2" ~:
 	tamanho (Pilha [Box (2,1)]) ~?= 2
+	,"Pilha de uma caixa de tamanho 2x2 deveria ter tamanho 2" ~:
+	tamanho (Pilha [Box (2,2)]) ~?= 2
 	]

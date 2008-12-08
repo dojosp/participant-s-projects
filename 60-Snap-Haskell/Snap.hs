@@ -1,7 +1,10 @@
 module Snap where
 
 data Ponto = Ponto Float Float
+	deriving (Show,Eq)
 data PontoAtrator = PontoAtrator Ponto Float
+
+clique _ _ = (Ponto 0 0)
 
 pertenceARegiao :: Ponto -> PontoAtrator -> Bool
 pertenceARegiao ponto (PontoAtrator centro raio) = raio >= distancia ponto centro

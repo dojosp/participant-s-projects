@@ -16,4 +16,6 @@ testeCalculaDistancias = TestList[
 	distancia (Ponto 0 0) (Ponto 0 2 ) ~?= 2
 	,"Distancia entre o ponto 0 0 e 1 0 deveria ser 1" ~:
 	distancia (Ponto 0 0) (Ponto 1 0 ) ~?= 1
+	,"Distancia entre o ponto 1 0 e 1 1 deveria ser 1" ~:
+	distancia (Ponto 1 0) (Ponto 1 1 ) ~?= 1
 	]

@@ -45,4 +45,6 @@ testeDescobreClique = TestList
 	[
 	"Clique sem pontos atratores eh o proprio ponto" ~:
 	clique (Ponto 0 0) [] ~?= (Ponto 0 0)
+	,"Clique sem pontos atratores eh o proprio outro ponto" ~:
+	clique (Ponto 1 1) [] ~?= (Ponto 1 1)
 	]

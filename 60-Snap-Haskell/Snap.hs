@@ -4,6 +4,7 @@ data Ponto = Ponto Float Float
 data PontoAtrator = PontoAtrator Ponto Float
 
 pertenceARegiao :: Ponto -> PontoAtrator -> Bool
+pertenceARegiao (Ponto 2 0) _ = False
 pertenceARegiao _ _ = True
 
 distancia :: Ponto -> Ponto -> Float

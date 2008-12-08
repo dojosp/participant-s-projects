@@ -24,13 +24,17 @@ testeCalculaDistancias = TestList[
 
 testeRaioAtracao = TestList[
 	"Ponto 0 0 deveria pertencer a regiao do ponto 0 0 raio 1"~:
-	pertenceARegiao (Ponto 0 0) (PontoAtrator (Ponto 0 0 ) 1)~?= True
+	pertenceARegiao (Ponto 0 0) (PontoAtrator (Ponto 0 0) 1)~?= True
 	,"Ponto 1 0 deveria pertencer a regiao do ponto 0 0 raio 1"~:
-	pertenceARegiao (Ponto 1 0) (PontoAtrator (Ponto 0 0 ) 1)~?= True
+	pertenceARegiao (Ponto 1 0) (PontoAtrator (Ponto 0 0) 1)~?= True
 	,"Ponto 2 0 nao deveria pertencer a regiao do ponto 0 0 raio 1"~:
-	pertenceARegiao (Ponto 2 0) (PontoAtrator (Ponto 0 0 ) 1)~?= False
+	pertenceARegiao (Ponto 2 0) (PontoAtrator (Ponto 0 0) 1)~?= False
     ,"Ponto 2 0 deveria pertencer a regiao do ponto 0 0 raio 2"~:
-	pertenceARegiao (Ponto 2 0) (PontoAtrator (Ponto 0 0 ) 2)~?= True
+	pertenceARegiao (Ponto 2 0) (PontoAtrator (Ponto 0 0) 2)~?= True
 	,"Ponto 3 0 nao deveria pertencer a regiao do ponto 0 0 raio 2"~:
-	pertenceARegiao (Ponto 3 0) (PontoAtrator (Ponto 0 0 ) 2)~?= False
+	pertenceARegiao (Ponto 3 0) (PontoAtrator (Ponto 0 0) 2)~?= False
+	,"Ponto 0 3 nao deveria pertencer a regiao do ponto 0 0 raio 2"~:
+	pertenceARegiao (Ponto 0 3) (PontoAtrator (Ponto 0 0) 2)~?= False
+	,"Ponto 2 3 deveria pertencer a regiao do ponto 2 2 raio 2"~:
+	pertenceARegiao (Ponto 2 3) (PontoAtrator (Ponto 2 2) 2)~?= True
 	]

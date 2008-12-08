@@ -25,4 +25,8 @@ testeCalculaDistancias = TestList[
 testeRaioAtracao = TestList[
 	"Ponto 0 0 deveria pertencer a regiao do ponto 0 0 raio 1"~:
 	pertenceARegiao (Ponto 0 0) (PontoAtrator (Ponto 0 0 ) 1)~?= True
+	,"Ponto 1 0 deveria pertencer a regiao do ponto 0 0 raio 1"~:
+	pertenceARegiao (Ponto 1 0) (PontoAtrator (Ponto 0 0 ) 1)~?= True
+	,"Ponto 2 0 nao deveria pertencer a regiao do ponto 0 0 raio 1"~:
+	pertenceARegiao (Ponto 2 0) (PontoAtrator (Ponto 0 0 ) 1)~?= False
 	]

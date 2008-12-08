@@ -5,7 +5,7 @@ import Snap
 
 main = runTestTT testes
 
-testes = TestList [testeCalculaDistancias]
+testes = TestList [testeCalculaDistancias,testeRaioAtracao]
 
 testeCalculaDistancias = TestList[
 	"Distancia entre um ponto e ele mesmo deveria ser 0" ~:
@@ -20,4 +20,9 @@ testeCalculaDistancias = TestList[
 	distancia (Ponto 1 0) (Ponto 1 1 ) ~?= 1.0
 	,"Distancia entre o ponto 0 3 e 4 0 deveria ser 5" ~:
 	distancia (Ponto 0 3) (Ponto 4 0 ) ~?= 5
+	]
+
+testeRaioAtracao = TestList[
+	"Ponto 0 0 deveria pertencer a regiao do ponto 0 0 raio 1"~:
+	pertenceARegiao (Ponto 0 0) (Ponto 0 0 ) (Raio 1)~?= True
 	]

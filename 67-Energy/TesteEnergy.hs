@@ -17,4 +17,6 @@ testeConexo = TestList[
 testeDFS = TestList[
             "dfs de grafo vazio deve devolver vazio" ~:
             dfs (Grafo 0 []) ~?= []
+           ,"dfs de grafo com um vertice deve devolver vazio" ~:
+            dfs (Grafo 1 []) ~?= []
            ]

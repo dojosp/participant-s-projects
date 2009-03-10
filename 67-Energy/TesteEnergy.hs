@@ -5,7 +5,7 @@ import Energy
 
 main = runTestTT testes 
 
-testes = TestList [testeConexo, testeDFS]
+testes = TestList [testeConexo, testeDFS, testeVizinhos]
 
 grafoMinimo = Grafo 3 [(1,2),(2,3)]
 
@@ -25,4 +25,11 @@ testeDFS =
      dfs (Grafo 2 []) ~?= [1]
     ,"dfs de grafo com dois vertices com aresta deve devolver vertices" ~:
      dfs (Grafo 2 [(1,2)]) ~?= [1,2]
+    ]
+
+testeVizinhos =
+    TestList
+    [
+     "Vizinhos de 1 na lista vazia eh vazio" ~:
+     vizinhos 1 [] ~?= []
     ]

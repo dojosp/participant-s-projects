@@ -9,5 +9,8 @@ ehConexo _ = True
 dfs :: Grafo -> [Int]
 dfs (Grafo 0 _) = []
 dfs (Grafo _ []) = [1]
-dfs (Grafo 2 _) = [1,2]
+dfs (Grafo 2 _) = [1, 2]
+dfs (Grafo _ list) = 1:vizinhos 1 list
 
+vizinhos :: Int -> [(Int, Int)] -> [Int]
+vizinhos _ _ = []

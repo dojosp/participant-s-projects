@@ -32,4 +32,6 @@ testeVizinhos =
     [
      "Vizinhos de 1 na lista vazia eh vazio" ~:
      vizinhos 1 [] ~?= []
+    ,"Vizinhos de 1 na lista com (1,2) eh 2" ~:
+     vizinhos 1 [(1,2)] ~?= [2]
     ]

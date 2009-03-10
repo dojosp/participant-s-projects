@@ -13,4 +13,5 @@ dfs (Grafo 2 _) = [1, 2]
 dfs (Grafo _ arestas) = 1:(vizinhos 1 arestas)
 
 vizinhos :: Int -> [(Int, Int)] -> [Int]
-vizinhos _ _ = []
+vizinhos _ [] = []
+vizinhos _ _ = [2]

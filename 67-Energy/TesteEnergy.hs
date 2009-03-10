@@ -25,6 +25,8 @@ testeDFS =
      dfs (Grafo 2 []) ~?= [1]
     ,"dfs de grafo com dois vertices com aresta deve devolver vertices" ~:
      dfs (Grafo 2 [(1,2)]) ~?= [1,2]
+    ,"dfs de grafo com tres vertices conexos deve devolver vertices" ~:
+     dfs (Grafo 3 [(1,2),(1,3)]) ~?= [1,2,3]
     ]
 
 testeVizinhos =

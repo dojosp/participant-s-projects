@@ -23,4 +23,6 @@ testeDFS =
      dfs (Grafo 1 []) ~?= []
     ,"dfs de grafo com dois vertices sem aresta deve devolver vertice 2" ~:
      dfs (Grafo 2 []) ~?= [2]
+    ,"dfs de grafo com dois vertices com aresta deve devolver vazio" ~:
+     dfs (Grafo 2 [(1,2)]) ~?= []
     ]

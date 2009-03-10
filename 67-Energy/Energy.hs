@@ -8,7 +8,16 @@ ehConexo _ = True
 
 dfs :: Grafo -> [Int]
 dfs (Grafo 0 _) = []
-dfs (Grafo _ arestas) = 1:(vizinhos 1 arestas)
+dfs grafo = dfs' 1 grafo
+
+dfs' :: Int -> Grafo -> [Int]
+dfs' vertice (Grafo n arestas) = 
+    let
+        amigos = vizinhos vertice arestas
+        --novasArestas = remove vertice arestas
+        --visitados = dfs (Grafo n novasArestas)
+    in
+      vertice:amigos
 
 vizinhos :: Int -> [(Int, Int)] -> [Int]
 vizinhos _ [] = []
@@ -16,3 +25,6 @@ vizinhos cara ((x,y):resto)
     | (cara == x)= y: vizinhos cara resto
     | (cara == y)= x: vizinhos cara resto
     | otherwise = vizinhos cara resto
+
+remove :: Int -> [(Int, Int)] -> [(Int, Int)]
+remove _ _ = []

@@ -5,7 +5,7 @@ import Energy
 
 main = runTestTT testes 
 
-testes = TestList [testeConexo, testeDFS, testeVizinhos]
+testes = TestList [testeConexo, testeDFS, testeVizinhos, testeRemoveArestas]
 
 grafoMinimo = Grafo 3 [(1,2),(2,3)]
 
@@ -27,6 +27,8 @@ testeDFS =
      dfs (Grafo 2 [(1,2)]) ~?= [1,2]
     ,"dfs de grafo com tres vertices conexos deve devolver vertices" ~:
      dfs (Grafo 3 [(1,2),(1,3)]) ~?= [1,2,3]
+    ,"dfs de grafo minimo deve devolver os vertices" ~:
+     dfs grafoMinimo ~?= [1,2,3]
     ]
 
 testeVizinhos =
@@ -38,4 +40,11 @@ testeVizinhos =
      vizinhos 1 [(1,2)] ~?= [2]
     ,"Vizinhos de 1 na lista com (1,2)(3,1) eh [2,3]" ~:
      vizinhos 1 [(1,2),(3,1)] ~?= [2,3]
+    ]
+
+testeRemoveArestas =
+    TestList
+    [
+     "Remover arestas com 1 da lista de arestas vazias eh vazia" ~:
+                                                                    remove 1 [] ~?= [] 
     ]

@@ -8,14 +8,14 @@ ehConexo _ = True
 
 dfs :: Grafo -> [Int]
 dfs (Grafo 0 _) = []
-dfs grafo = dfs' 1 grafo
+dfs grafo = dfs' grafo 1
 
-dfs' :: Int -> Grafo -> [Int]
-dfs' vertice (Grafo n arestas) = 
+dfs' :: Grafo -> Int -> [Int]
+dfs' (Grafo n arestas) vertice = 
     let
         amigos = vizinhos vertice arestas
-        --novasArestas = remove vertice arestas
-        --visitados = dfs (Grafo n novasArestas)
+        novasArestas = remove vertice arestas
+        visitados' = map (dfs' (Grafo n novasArestas)) amigos
     in
       vertice:amigos
 

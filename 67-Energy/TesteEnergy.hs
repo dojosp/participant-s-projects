@@ -5,11 +5,16 @@ import Energy
 
 main = runTestTT testes 
 
-testes = TestList [testeUm]
+testes = TestList [testeConexo , testeDFS]
 
 grafoMinimo = Grafo 3 [(1,2),(2,3)]
 
-testeUm = TestList[
-	   "Grafo minimo deve ser conexo" ~:
-	   ehConexo grafoMinimo ~?= True
-	  ]
+testeConexo = TestList[
+	       "Grafo minimo deve ser conexo" ~:
+	       ehConexo grafoMinimo ~?= True
+	      ]
+
+testeDFS = TestList[
+            "dfs de grafo vazio deve devolver vazio" ~:
+            dfs (Grafo 0 []) ~?= []
+           ]

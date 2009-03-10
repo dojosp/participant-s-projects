@@ -46,5 +46,7 @@ testeRemoveArestas =
     TestList
     [
      "Remover arestas com 1 da lista de arestas vazias eh vazia" ~:
-                                                                    remove 1 [] ~?= [] 
+     remove 1 [] ~?= [] 
+    ,"Remover arestas com 1 da lista de arestas grandes eh vazia" ~:
+     remove 1 [(1,2),(2,3)] ~?= [(2,3)] 
     ]

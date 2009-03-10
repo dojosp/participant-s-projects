@@ -27,4 +27,5 @@ vizinhos cara ((x,y):resto)
     | otherwise = vizinhos cara resto
 
 remove :: Int -> [(Int, Int)] -> [(Int, Int)]
-remove _ _ = []
+remove cara arestas = 
+    filter (\(x,y) -> not ((x==cara)||(y==cara))) arestas

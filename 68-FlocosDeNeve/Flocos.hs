@@ -1,5 +1,7 @@
 module Flocos where
 
+data Floco = Floco Ponto Raio
+           deriving (Show, Eq)
 type Raio = Float
 type Ponto = (Float,Float)
 
@@ -15,9 +17,13 @@ seno30 = 0.5
 coseno30 :: Float
 coseno30 = (sqrt 3 ) / 2
 
-geraFractal _ _ _ = [(1,11),
-                     (1+5*(sqrt 3), 6),
-                     (1+5*(sqrt 3), -4),
-                     (1, -9),
-                     (1-5*(sqrt 3), -4),
-                     (1-5*(sqrt 3), 6)]           
+geraFractal _ _ _ = [
+ Floco(1,1) 10,   
+ Floco(1,11) (10/3),
+ Floco(1+5*(sqrt 3), 6) (10/3),
+ Floco(1+5*(sqrt 3), -4) (10/3),
+ Floco(1, -9) (10/3),
+ Floco(1-5*(sqrt 3), -4) (10/3),
+ Floco(1-5*(sqrt 3), 6) (10/3)] 
+
+

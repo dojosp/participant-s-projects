@@ -29,10 +29,12 @@ testeCalculaPontas =
     ]
 testeGeraFractal=TestList
                   [
-                   geraFractal (1,1) 10 1 ~?=[(1,11),
-                                 (1+5*(sqrt 3), 6),
-                                 (1+5*(sqrt 3), -4),
-                                 (1, -9),
-                                 (1-5*(sqrt 3), -4),
-                                 (1-5*(sqrt 3), 6)] 
+                   geraFractal (1,1) 10 1 ~?=[
+                                    Floco(1,1) 10,   
+                                    Floco(1,11) (10/3),
+                                    Floco(1+5*(sqrt 3), 6) (10/3),
+                                    Floco(1+5*(sqrt 3), -4) (10/3),
+                                    Floco(1, -9) (10/3),
+                                    Floco(1-5*(sqrt 3), -4) (10/3),
+                                 Floco(1-5*(sqrt 3), 6) (10/3)] 
                   ]

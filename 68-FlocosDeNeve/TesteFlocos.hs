@@ -6,7 +6,7 @@ import Flocos
 main = runTestTT testes
 
 testes = TestList
-         [testeCalculaPontas]
+         [testeCalculaPontas, testeGeraFractal]
 
 testeCalculaPontas =
     TestList
@@ -27,3 +27,12 @@ testeCalculaPontas =
                                  (1-5*(sqrt 3), -4),
                                  (1-5*(sqrt 3), 6)]
     ]
+testeGeraFractal=TestList
+                  [
+                   geraFractal (1,1) 10 1 ~?=[(1,11),
+                                 (1+5*(sqrt 3), 6),
+                                 (1+5*(sqrt 3), -4),
+                                 (1, -9),
+                                 (1-5*(sqrt 3), -4),
+                                 (1-5*(sqrt 3), 6)] 
+                  ]

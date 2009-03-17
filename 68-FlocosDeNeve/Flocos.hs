@@ -14,4 +14,10 @@ calculaPontas (x,y) raio = [(x, y+raio),
 seno30 = 0.5
 coseno30 :: Float
 coseno30 = (sqrt 3 ) / 2
-           
+
+geraFractal _ _ _ = [(1,11),
+                     (1+5*(sqrt 3), 6),
+                     (1+5*(sqrt 3), -4),
+                     (1, -9),
+                     (1-5*(sqrt 3), -4),
+                     (1-5*(sqrt 3), 6)]           

@@ -17,4 +17,6 @@ testeCalculaPontas =
      head (tail (calculaPontas (0,0) 10)) ~?= (5 * (sqrt 3), 5)
     ,"Calcula terceira ponta do floco em 0,0 com raio 10" ~:
      head (tail (tail (calculaPontas (0,0) 10))) ~?= (5 * (sqrt 3), -5)
+    ,"Calcula as 3 últimas pontas do floco em 0,0 com raio 10" ~:
+     tail (tail (tail (calculaPontas (0,0) 10))) ~?= [(0, -10),(-5 * (sqrt 3), -5), (-5* (sqrt 3), 5)]
     ]

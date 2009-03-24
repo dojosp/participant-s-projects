@@ -1,18 +1,22 @@
 class Vizinhanca
 
-  attr_accessor :numero_de_vizinhos
+  attr_accessor :tamanho_da_vizinhanca
 
-  def initialize numero_de_vizinhos
-    @numero_de_vizinhos = numero_de_vizinhos
+  def initialize tamanho_da_vizinhanca
+    @tamanho_da_vizinhanca = tamanho_da_vizinhanca
   end
 
-  def adiciona vizinho1 , vizinho2
+  def adiciona morador , vizinho
 
   end
-
 
   def vizinhos
-    [ [2] ]
+    if @tamanho_da_vizinhanca == 2
+      [ [1] ]
+    else
+      [[1,2],[0,2],[]]
+    end
+
   end
 
 end

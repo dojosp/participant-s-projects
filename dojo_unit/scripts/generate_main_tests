@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
 
 test_name_pattern = /void[[:space:]]+((test|deveria|should)[a-zA-Z0-9_]*)[[:space:]]*\(\)\;[[:space:]]*/
-set_up_pattern = /void[[:space:]]+set_up[[:space:]]*\(\)\;[[:space:]]*/
-tear_down_pattern = /void[[:space:]]+tear_down[[:space:]]*\(\)\;[[:space:]]*/
+set_up_pattern = /void[[:space:]]+(before|set_up)[[:space:]]*\(\)\;[[:space:]]*/
+tear_down_pattern = /void[[:space:]]+(after|tear_down)[[:space:]]*\(\)\;[[:space:]]*/
+
 
 header_filename = $*[0] + '.h'
 output_name = $*[0] + '_main.c'

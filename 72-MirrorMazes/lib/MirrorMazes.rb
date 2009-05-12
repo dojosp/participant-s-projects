@@ -1,6 +1,11 @@
 class MirrorMaze
   attr_reader :entrada, :saida
 
+  def resolvido?
+    @entrada == @saida
+  end
+
+
   def borda? linha, coluna, size
     (linha == 0 or
      coluna == 0 or

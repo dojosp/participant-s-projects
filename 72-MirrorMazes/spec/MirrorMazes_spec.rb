@@ -33,4 +33,19 @@ describe MirrorMaze do
       maze.entrada.should == [2,0]
     end
   end
+
+  describe "quando o raio passa pelo labirinto" do
+    it "deveria permitir a passagem do raio por um labirinto de entrada igual à saída " do
+      maze = MirrorMaze.new "*.*"
+      maze.should be_resolvido
+    end
+
+
+    it "nao deveria permitir a passagem do raio por um labirinto sem caminho" do
+      maze = MirrorMaze.new "*.*
+                             ..*
+                             ***"
+      maze.should_not be_resolvido
+    end
+  end
 end

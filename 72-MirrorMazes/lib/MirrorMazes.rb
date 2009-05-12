@@ -15,6 +15,14 @@ class MirrorMaze
   end
 
   def saída
-    [0,1]
+    saida = nil
+    @mapa.each_with_index do |linha, indice|
+      indice_caracter = 0
+      linha.each_char do |caracter|
+        saida = [indice, indice_caracter] if caracter == '.'
+        indice_caracter += 1
+      end
+    end
+    return saida
   end
 end

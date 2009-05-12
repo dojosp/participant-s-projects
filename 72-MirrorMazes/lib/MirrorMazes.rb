@@ -1,5 +1,10 @@
+DIREITA = 1
 class MirrorMaze
   attr_reader :entrada, :saida
+
+  def direcao
+    DIREITA
+  end
 
   def resolvido?
     @entrada == @saida

@@ -40,12 +40,29 @@ describe MirrorMaze do
       maze.should be_resolvido
     end
 
+    it "deveria permitir a passagem do raio em linha reta "
+      #do
+      #maze = MirrorMaze.new "***
+      #                      ...
+      #                      ***"
+      #maze.should be_resolvido
+    #end
 
     it "nao deveria permitir a passagem do raio por um labirinto sem caminho" do
       maze = MirrorMaze.new "*.*
-                             ..*
+                             .\\*
                              ***"
       maze.should_not be_resolvido
+    end
+  end
+
+  describe "direcao da luz na entrada" do
+
+    it "deveria seguir para direita se a entrada esta na esquerda" do
+       maze = MirrorMaze.new "***
+                             ...
+                             ***"
+      maze.direcao.should == DIREITA
     end
   end
 end

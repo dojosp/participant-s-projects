@@ -3,12 +3,13 @@ class MirrorMaze
 
   def initialize mapa
     @mapa = mapa.split
-    @mapa.each_with_index do |linha, indice|
-      indice_caracter = 0
-      linha.each_char do |caracter|
-        @entrada = [indice, indice_caracter] if caracter == '.' and @entrada.nil?
-        @saida = [indice, indice_caracter] if caracter == '.'
-        indice_caracter += 1
+    @mapa.each_with_index do |string, linha|
+      linha_array = string.split ""
+      linha_array.each_with_index do |caracter, coluna|
+        if caracter == '.'
+          @entrada = [linha, coluna] if @entrada.nil?
+          @saida = [linha, coluna]
+        end
       end
     end
   end

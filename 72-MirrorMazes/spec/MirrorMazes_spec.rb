@@ -13,13 +13,13 @@ describe "MirrorMazes" do
   it "deveria identificar entrada e saída" do
     maze = MirrorMaze.new "*.*"
     maze.entrada.should == [0,1]
-    maze.saída.should == [0,1]
+    maze.saida.should == [0,1]
 
     maze = MirrorMaze.new "***
                            ...
                            ***"
     maze.entrada.should == [1,0]
-    maze.saída.should == [1,2]
+    maze.saida.should == [1,2]
   end
 
 

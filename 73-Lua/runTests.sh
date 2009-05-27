@@ -1,1 +1,1 @@
-lua specs/codigo_spec.lua
+lua specs/bowling_spec.lua

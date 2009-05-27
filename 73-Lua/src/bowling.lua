@@ -1,14 +1,14 @@
 function Frame(score1, score2)
   return {
   		result = function()
-  			score = 0
-  			if score1 ~= "-" then 
-  				score = tonumber(score1)
-  			end
-  			if score2 ~= "-" then
-  				score= score + tonumber(score2)
-			end
-			return score
+  			return Convert(score1) + Convert(score2)
   		end
   	}
+end
+
+function Convert(score)
+	if score == "-" then
+		return 0
+	end
+	return tonumber(score) 
 end

@@ -27,6 +27,11 @@ describe["Bowling"] = function()
   	local sf = SumFrames(Frame("1","1"), Frame("1","1"))
   	expect(sf).should_be(4)
   end
+  
+  it["should return strike"] = function()
+    local sf = Frame("X","-")
+  	expect(sf).should_be(10)
+  end
 
 end
 

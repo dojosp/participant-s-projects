@@ -3,6 +3,9 @@ function Frame(score1, score2)
 end
 
 function Convert(score)
+    if score == "X" then
+      return 10
+    end
 	return tonumber(score) or 0 
 end
 

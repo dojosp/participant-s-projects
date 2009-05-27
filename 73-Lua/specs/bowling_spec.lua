@@ -15,9 +15,21 @@ describe["Bowling"] = function()
   	expect( Frame("2","-") ).should_be(2)
   end
 
-  it["should know result of simple frame knocking on second roll"] = function()
+  it["should know result of simple frame knocking on both rolls"] = function()
   	expect( Frame("2","3") ).should_be(5)
   end
+
+  it["should know result of another simple frame knocking on both rolls"] = function()
+  	expect( Frame("5","1") ).should_be(6)
+  end
+
+  it["should sum two simple frames"] = function()
+  	local sf = SumFrames(Frame("1","1"), Frame("1","1"))
+  	expect(sf).should_be(4)
+  end
+
 end
 
 spec:report(false)
+
+

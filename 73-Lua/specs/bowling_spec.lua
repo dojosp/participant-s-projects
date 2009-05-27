@@ -17,6 +17,11 @@ describe["Bowling"] = function()
   	local f = Frame("2","-")
   	expect( f:result() ).should_be(2)
   end
+
+  it["should know result of simple frame knocking on second roll"] = function()
+  	local f = Frame("2","3")
+  	expect( f:result() ).should_be(5)
+  end
 end
 
 spec:report(false)

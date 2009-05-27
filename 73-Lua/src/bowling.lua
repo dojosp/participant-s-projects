@@ -10,5 +10,8 @@ function Convert(score)
 end
 
 function SumFrames(frame1, frame2)
+	if frame1 == 10 then
+		return 10 + 2*frame2
+	end
 	return frame1 + frame2
 end

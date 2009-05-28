@@ -2,6 +2,13 @@ require 'lib.luaspec'
 require 'src.bowling'
 
 describe["Bowling"] = function()
+  before = function()
+  	bowling = Bowling()
+  end
+  
+  it["should start empty"] = function()
+  	expect( bowling:finalResult() ).should_be(0)
+  end
   
   it["should know result of empty frame"] = function()
   	expect( Frame("-","-") ).should_be(0)
@@ -36,6 +43,14 @@ describe["Bowling"] = function()
   	local sf = SumFrames(Frame("X"), Frame("1","1"))
   	expect(sf).should_be(14)
   end
+  
+  it["should sum two frames after spare"] = pending
+  --[[
+  function()
+  	local sf = SumFrames(Frame("7", "/"), Frame("1","1"))
+  	expect(sf).should_be(13)
+  end
+  ]]
   
   
   

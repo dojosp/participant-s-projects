@@ -1,3 +1,11 @@
+function Bowling()
+	return {
+		finalResult = function()
+			return 0
+		end
+	}
+end
+
 function Frame(score1, score2)
 	return Convert(score1) + Convert(score2)
 end

@@ -7,6 +7,5 @@ homogenea [ _ ] = True
 homogenea (x:xs) = x == head xs && (homogenea xs)
 
 divide :: Int -> Int -> String -> [String]
-divide _ 3 (x:xs) = [ [x, head xs], tail xs]
-divide _ 2 (x:xs) = [[x],xs]
-divide _ _ string = [string]
+divide _ 1 string = [string]
+divide l c x = [ take (c - c `div` 2) x , drop (c - c `div` 2) x ]

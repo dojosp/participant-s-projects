@@ -1,7 +1,7 @@
 Most Dojo meetings are now being commited here with comments showing what pairs produced that commit and what was its intent.
 Regular dojo sessions are committed as folders containing the number of the session and the name of problem.
 Example: 53-Haskell-basico
-There is a parallel session for "UberDojo" in which folders have a serial number, the name "UberDojo" and the language it was written in.
+There is a parallel session for "UberDojo"(or "Kake") in which folders have a serial number, the name "UberDojo" and the language it was written in.
 Example: 01-UberDojo-Python
 There is also a project we built to help us have dojos in C:
 Dojo Unit - a small library for testing C programs.

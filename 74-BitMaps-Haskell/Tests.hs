@@ -25,6 +25,8 @@ testesDeHomogeneidade = TestList
 	 homogenea "111" ~?= True
 	,"Uma matriz com 1,1 e 0 nao deveria ser homogenea" ~:
 	 homogenea "110" ~?= False 
+	,"Uma matriz com 0,0 e 1 nao deveria ser homogenea" ~:
+	 homogenea "001" ~?= False 
 	 ]
 
 testesDeIntegracao = TestList

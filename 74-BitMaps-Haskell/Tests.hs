@@ -6,9 +6,16 @@ import BitMaps
 tests = TestList
 	[
 	 testesDeIntegracao,
-	 testesDeHomogeneidade
+	 testesDeHomogeneidade,
+	 testesQuadrantes
 	]
-	
+
+testesQuadrantes = TestList
+	[
+	"Uma matriz 0 deveria ser dividida em 1 quadrante" ~:
+	 divide 1 1 "0" ~?= ["0"]
+	]
+
 testesDeHomogeneidade = TestList
 	[
 	"Uma matriz de um so 0 deveria ser homogenea" ~:

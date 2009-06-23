@@ -32,6 +32,10 @@ testesQuadrantes = TestList
 	 divide 3 1 "110" ~?= ["11","0"]
 	 ,"Uma matriz 1110010 7x1 deveria ser dividida em 2 quadrantes" ~:
 	 divide 7 1 "1110010" ~?= ["1110","010"]
+	 ,"Uma matriz 1100 2x2 deveria ser dividida em 4 quadrantes" ~:
+	 divide 2 2 "1100" ~?= ["1","1","0","0"]
+	 ,"Uma matriz 1010 2x2 deveria ser dividida em 4 quadrantes" ~:
+	 divide 2 2 "1010" ~?= ["1","0","1","0"]
 	]
 
 testesDeHomogeneidade = TestList

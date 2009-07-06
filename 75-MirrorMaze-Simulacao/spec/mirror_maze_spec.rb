@@ -8,17 +8,13 @@ require 'lib/mirror_maze'
 #Saber se saiu do labirinto
 
 describe Labirinto do
-	it "andar partir de um ponto e uma direcao" do
+	it "andar pra direita a partir de um ponto" do
 		mapa = [["*",".","*"],
-				["*",".", "*"]]
-				
-		partida = [0,1]
-		
-		direcao = "direita"
-		
+				["*",".","*"]]
 		labirinto = Labirinto.new(mapa)
-		labirinto.proximoPonto(partida,direcao).should == [0,2]
+
+		labirinto.proximoPonto([0,1],:direita).should == [0,2]
+		labirinto.proximoPonto([1,1],:direita).should == [1,2]
 	end
-	
 	
 end

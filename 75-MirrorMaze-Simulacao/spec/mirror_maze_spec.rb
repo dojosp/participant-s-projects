@@ -75,5 +75,6 @@ describe Labirinto do
 				["*","\\","."]]
 		labirinto = Labirinto.new(mapa)
 		labirinto.should be_espelho([1,1])
+		labirinto.should_not be_espelho([0,1])
 	end
 end

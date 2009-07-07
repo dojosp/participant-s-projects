@@ -5,7 +5,7 @@ require 'lib/mirror_maze'
 #Andar para frente -ok
 #Virar no espelho
 #Saber se eh parede -ok
-#Não atravessar a parede
+#Não atravessar a parede -ok
 #Saber se saiu do labirinto
 
 describe Labirinto do
@@ -67,5 +67,13 @@ describe Labirinto do
 		labirinto = Labirinto.new(mapa)
 
 		labirinto.proximoPonto([0,0],:baixo).should == [0,0]
+		labirinto.proximoPonto([0,1],:baixo).should == [0,1]
+	end
+	
+	it "saber se ponto eh um espelho" do
+		mapa = [["*",".","*"],
+				["*","\\","."]]
+		labirinto = Labirinto.new(mapa)
+		labirinto.should be_espelho([1,1])
 	end
 end

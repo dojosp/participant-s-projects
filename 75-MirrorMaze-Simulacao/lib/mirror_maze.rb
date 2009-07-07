@@ -20,4 +20,7 @@ class Labirinto
 	def parede?(ponto)
 		@mapa[ponto[0]][ponto[1]] == "*"
 	end
+	def espelho?(ponto)
+		true
+	end
 end

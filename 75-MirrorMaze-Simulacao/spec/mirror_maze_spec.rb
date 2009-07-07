@@ -17,4 +17,23 @@ describe Labirinto do
 		labirinto.proximoPonto([1,1],:direita).should == [1,2]
 	end
 	
+	it "andar pra esquerda a partir de um ponto" do
+		mapa = [["*",".","*"],
+				["*",".","*"]]
+		labirinto = Labirinto.new(mapa)
+
+		labirinto.proximoPonto([0,1],:esquerda).should == [0,0]
+		labirinto.proximoPonto([1,1],:esquerda).should == [1,0]
+
+	end
+	it "andar pra cima a partir de um ponto" do
+		mapa = [["*","*"],
+				[".","."],
+				["*","*"]]
+		labirinto = Labirinto.new(mapa)
+
+		labirinto.proximoPonto([1,0],:cima).should == [0,0]
+		labirinto.proximoPonto([1,1],:cima).should == [0,1]
+
+	end
 end

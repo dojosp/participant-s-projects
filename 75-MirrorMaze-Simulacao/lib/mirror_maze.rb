@@ -3,10 +3,12 @@ class Labirinto
 	end
 
 	def proximoPonto (partida, direcao)
-		if partida == [0,1]
-			[0,2]
+		if direcao == :esquerda
+			[partida[0], partida[1] - 1]
+		elsif direcao == :direita
+			[partida[0], partida[1] + 1] 
 		else
-			[1,2]
+			[partida[0] - 1, partida[1]]
 		end
 	end
 end

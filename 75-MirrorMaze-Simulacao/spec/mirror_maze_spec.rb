@@ -2,8 +2,9 @@ require 'spec'
 require 'lib/mirror_maze'
 
 #Percorrer o caminho
-#Andar para frente
+#Andar para frente -ok
 #Virar no espelho
+#Saber se eh parede -ok
 #Não atravessar a parede
 #Saber se saiu do labirinto
 
@@ -55,6 +56,7 @@ describe Labirinto do
 		labirinto = Labirinto.new(mapa)
 		
 		labirinto.should be_parede([0,0])
-		labirinto.should_not be_parede([1,1])		
+		labirinto.should_not be_parede([1,1])
+		labirinto.should_not be_parede([1,0])
 	end
 end

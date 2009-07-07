@@ -4,6 +4,7 @@ class Labirinto
 						:direita => [0,1],
 						:cima => [-1,0],
 						:baixo => [1,0]}
+		@mapa = mapa
 	end
 
 	def proximoPonto (partida, direcao)
@@ -13,10 +14,6 @@ class Labirinto
 	end
 	
 	def parede?(ponto)
-		if ponto == [1,1]
-			false
-		else
-			true
-		end
+		@mapa[ponto[0]][ponto[1]] == "*"
 	end
 end

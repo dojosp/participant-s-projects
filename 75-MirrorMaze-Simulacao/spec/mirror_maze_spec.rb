@@ -78,4 +78,11 @@ describe Labirinto do
 		labirinto.should_not be_espelho([0,1])
 		labirinto.should be_espelho([1,0])
 	end
+	
+	it "reflete no espelho" do
+		mapa = [["*",".","*"],
+				["*","\\","."]]
+		labirinto = Labirinto.new(mapa)
+		labirinto.proximoPonto([1,1], :baixo).should == [1,2]
+	end
 end

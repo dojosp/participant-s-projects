@@ -11,6 +11,9 @@ class Labirinto
 		if parede? (partida)
 			return partida
 		end
+		if espelho? (partida)
+			return [1,2]
+		end
 	
 		deslocamento = @deslocamento[direcao]
 		[partida[0] + deslocamento[0],
@@ -20,6 +23,7 @@ class Labirinto
 	def parede?(ponto)
 		@mapa[ponto[0]][ponto[1]] == "*"
 	end
+	
 	def espelho?(ponto)
 		@mapa[ponto[0]][ponto[1]] == "\\" or
 		@mapa[ponto[0]][ponto[1]] == "/"

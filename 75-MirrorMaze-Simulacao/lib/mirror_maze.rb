@@ -5,6 +5,11 @@ class Labirinto
 						:cima => [-1,0],
 						:baixo => [1,0]}
 		@mapa = mapa
+		@espelho = {:baixo => :direita,
+					:direita => :baixo,
+					:esquerda => :cima,
+					:cima => :esquerda
+					}
 	end
 
 	def proximoPonto (partida, direcao)
@@ -12,15 +17,7 @@ class Labirinto
 			return partida
 		end
 		if espelho? (partida)
-			if direcao == :baixo
-				direcao = :direita
-			elsif direcao == :esquerda
-				direcao = :cima
-			elsif direcao == :cima
-				direcao = :esquerda
-			elsif direcao == :direita
-				direcao = :baixo
-			end
+			direcao = @espelho[direcao]
 		end
 	
 		deslocamento = @deslocamento[direcao]

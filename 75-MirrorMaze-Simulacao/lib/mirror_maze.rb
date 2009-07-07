@@ -16,6 +16,10 @@ class Labirinto
 				direcao = :direita
 			elsif direcao == :esquerda
 				direcao = :cima
+			elsif direcao == :cima
+				direcao = :esquerda
+			elsif direcao == :direita
+				direcao = :baixo
 			end
 		end
 	

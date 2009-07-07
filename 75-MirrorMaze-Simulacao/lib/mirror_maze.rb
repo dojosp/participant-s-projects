@@ -7,7 +7,8 @@ class Labirinto
 	end
 
 	def proximoPonto (partida, direcao)
-		[partida[0] + @deslocamento[direcao][0],
-		 partida[1] + @deslocamento[direcao][1]]
+		deslocamento = @deslocamento[direcao]
+		[partida[0] + deslocamento[0],
+		 partida[1] + deslocamento[1]]
 	end
 end

@@ -11,4 +11,12 @@ class Labirinto
 		[partida[0] + deslocamento[0],
 		 partida[1] + deslocamento[1]]
 	end
+	
+	def parede?(ponto)
+		if ponto == [1,1]
+			false
+		else
+			true
+		end
+	end
 end

@@ -47,4 +47,14 @@ describe Labirinto do
 		labirinto.proximoPonto([1,0],:baixo).should == [2,0]
 		labirinto.proximoPonto([1,1],:baixo).should == [2,1]
 	end
+	
+	it "saber se posicao eh parede ou nao" do
+		mapa = [["*","*"],
+				[".","."],
+				["*","*"]]
+		labirinto = Labirinto.new(mapa)
+		
+		labirinto.should be_parede([0,0])
+		labirinto.should_not be_parede([1,1])		
+	end
 end

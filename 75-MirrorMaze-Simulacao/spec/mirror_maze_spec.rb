@@ -59,4 +59,13 @@ describe Labirinto do
 		labirinto.should_not be_parede([1,1])
 		labirinto.should_not be_parede([1,0])
 	end
+	
+	it "quando esta numa parede nao anda" do
+		mapa = [["*","*"],
+				[".","."],
+				["*","*"]]
+		labirinto = Labirinto.new(mapa)
+
+		labirinto.proximoPonto([0,0],:baixo).should == [0,0]
+	end
 end

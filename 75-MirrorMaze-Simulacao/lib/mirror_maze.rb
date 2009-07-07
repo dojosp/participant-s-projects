@@ -8,6 +8,10 @@ class Labirinto
 	end
 
 	def proximoPonto (partida, direcao)
+		if parede? (partida)
+			return partida
+		end
+	
 		deslocamento = @deslocamento[direcao]
 		[partida[0] + deslocamento[0],
 		 partida[1] + deslocamento[1]]

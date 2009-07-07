@@ -21,6 +21,7 @@ class Labirinto
 		@mapa[ponto[0]][ponto[1]] == "*"
 	end
 	def espelho?(ponto)
-		ponto == [1,1]
+		@mapa[ponto[0]][ponto[1]] == "\\" or
+		@mapa[ponto[0]][ponto[1]] == "/"
 	end
 end

@@ -72,9 +72,10 @@ describe Labirinto do
 	
 	it "saber se ponto eh um espelho" do
 		mapa = [["*",".","*"],
-				["*","\\","."]]
+				["/","\\","."]]
 		labirinto = Labirinto.new(mapa)
 		labirinto.should be_espelho([1,1])
 		labirinto.should_not be_espelho([0,1])
+		labirinto.should be_espelho([1,0])
 	end
 end

@@ -12,7 +12,8 @@ class Labirinto
 			return partida
 		end
 		if espelho? (partida)
-			return [1,2]
+			return [1,2] if direcao == :baixo
+			return [0,1] if direcao == :esquerda
 		end
 	
 		deslocamento = @deslocamento[direcao]

@@ -84,5 +84,6 @@ describe Labirinto do
 				["*","\\","."]]
 		labirinto = Labirinto.new(mapa)
 		labirinto.proximoPonto([1,1], :baixo).should == [1,2]
+		labirinto.proximoPonto([1,1], :esquerda).should == [0,1]
 	end
 end

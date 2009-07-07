@@ -1,16 +1,13 @@
 class Labirinto
 	def initialize(mapa)
+		@deslocamento = {:esquerda => [0,-1],
+						:direita => [0,1],
+						:cima => [-1,0],
+						:baixo => [1,0]}
 	end
 
 	def proximoPonto (partida, direcao)
-		if direcao == :esquerda
-			[partida[0], partida[1] - 1]
-		elsif direcao == :direita
-			[partida[0], partida[1] + 1] 
-		elsif direcao == :cima
-			[partida[0] - 1, partida[1]]
-		else
-			[partida[0] + 1, partida[1]]
-		end
+		[partida[0] + @deslocamento[direcao][0],
+		 partida[1] + @deslocamento[direcao][1]]
 	end
 end

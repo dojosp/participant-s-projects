@@ -37,6 +37,8 @@ testaContagem =
      contagem 3 ~?= [0,0,0,1,0,0,0,0,0,0]
     ,"Deveriamos ter 1 digito 1 em 1, 1 em 0 e nenhum outro digito" ~:
      contagem 10 ~?= [1,1,0,0,0,0,0,0,0,0]
+    ,"Deveriamos ter 2 digitos 1 em 1 e nenhum outro digito" ~:
+     contagem 11 ~?= [0,2,0,0,0,0,0,0,0,0]
     ]
 
 testaSomaNoDigito =

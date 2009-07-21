@@ -8,7 +8,7 @@ main = runTestTT testes
 testes = TestList [
           testaFatorial
          ,testaContagem
-
+         ,testaSomaNoDigito
          ]
 
 testaFatorial =
@@ -33,4 +33,15 @@ testaContagem =
      contagem 1 ~?= [0,1,0,0,0,0,0,0,0,0]
     ,"Deveriamos ter 1 digito 2 em 2 e nenhum outro digito" ~:
      contagem 2 ~?= [0,0,1,0,0,0,0,0,0,0]
+    ,"Deveriamos ter 1 digito 3 em 3 e nenhum outro digito" ~:
+     contagem 3 ~?= [0,0,0,1,0,0,0,0,0,0]
+    ]
+
+testaSomaNoDigito =
+    TestList
+    [
+     "Somar no digito 0, incrementa para 1 seu valor" ~:
+     somaNoDigito 0 [0,0,0,0,0,0,0,0,0,0] ~?= [1,0,0,0,0,0,0,0,0,0]
+    ,"Somar no digito 1, incrementa para 1 seu valor" ~:
+     somaNoDigito 1 [0,0,0,0,0,0,0,0,0,0] ~?= [0,1,0,0,0,0,0,0,0,0]
     ]

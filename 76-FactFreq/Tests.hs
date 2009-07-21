@@ -35,10 +35,12 @@ testaContagem =
      contagem 2 ~?= [0,0,1,0,0,0,0,0,0,0]
     ,"Deveriamos ter 1 digito 3 em 3 e nenhum outro digito" ~:
      contagem 3 ~?= [0,0,0,1,0,0,0,0,0,0]
-    ,"Deveriamos ter 1 digito 1 em 1, 1 em 0 e nenhum outro digito" ~:
+    ,"Deveriamos ter 1 digito 1 e 1 digito 0 em 10 e nenhum outro digito" ~:
      contagem 10 ~?= [1,1,0,0,0,0,0,0,0,0]
-    ,"Deveriamos ter 2 digitos 1 em 1 e nenhum outro digito" ~:
+    ,"Deveriamos ter 2 digitos 1 em 11 e nenhum outro digito" ~:
      contagem 11 ~?= [0,2,0,0,0,0,0,0,0,0]
+    ,"Deveriamos ter 3 digitos 1 em 111 e nenhum outro digito" ~:
+     contagem 111 ~?= [0,3,0,0,0,0,0,0,0,0]
     ]
 
 testaSomaNoDigito =

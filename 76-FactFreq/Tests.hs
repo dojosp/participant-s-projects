@@ -50,4 +50,6 @@ testaSomaNoDigito =
      somaNoDigito 2 [0,0,0,0,0,0,0,0,0,0] ~?= [0,0,1,0,0,0,0,0,0,0]
     ,"Somar no digito 2, incrementa para 1 seu valor e deixa os outros como eram" ~:
      somaNoDigito 2 [1,1,0,0,0,0,0,0,0,0] ~?= [1,1,1,0,0,0,0,0,0,0]
+    ,"Somar no digito 9, incrementa para 1 seu valor" ~:
+     somaNoDigito 9 [0,0,0,0,0,0,0,0,0,0] ~?= [0,0,0,0,0,0,0,0,0,1]
     ]

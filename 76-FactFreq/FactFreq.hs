@@ -9,6 +9,3 @@ contagem _ = [0,1,0,0,0,0,0,0,0,0]
 
 somaNoDigito 0 (x:xs) = ((x+1):xs)
 somaNoDigito n lista = [0] ++ somaNoDigito (n-1) (tail lista)
-somaNoDigito 1 [0,1,0,0,0,0,0,0,0,0] = [0,2,0,0,0,0,0,0,0,0]
-somaNoDigito 1 _ = [0,1,0,0,0,0,0,0,0,0]
-somaNoDigito _ _ = [1,0,0,0,0,0,0,0,0,0]

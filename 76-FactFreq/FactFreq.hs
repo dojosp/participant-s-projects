@@ -8,4 +8,4 @@ contagem 2 = [0,0,1,0,0,0,0,0,0,0]
 contagem _ = [0,1,0,0,0,0,0,0,0,0]
 
 somaNoDigito 0 (x:xs) = ((x+1):xs)
-somaNoDigito n lista = [0] ++ somaNoDigito (n-1) (tail lista)
+somaNoDigito n (x:xs) = x : somaNoDigito (n-1) xs

@@ -4,8 +4,11 @@ function soma_jogadas(jogadas)
   for posicao,jogada in pairs(jogadas) do
     soma = soma + jogada[1]
    
-    if eh_strike(jogada) then    
-      soma = soma + jogadas[posicao+1][1] + jogadas[posicao+1][2]
+    if eh_strike(jogada) then
+      soma = soma + jogadas[posicao+1][1]
+      if not eh_strike(jogadas[posicao+1]) then
+        soma = soma + jogadas[posicao+1][2]
+      end
     else
       soma = soma + jogada[2]
     end

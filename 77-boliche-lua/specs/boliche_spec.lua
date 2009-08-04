@@ -140,6 +140,19 @@ describe["Boliche"] = function()
                          }) ).should_be(18)
   end
 
+  it["strike seguido de strike e zero no resto deve dar 30"] = function()
+  	expect( soma_jogadas({{0,0},
+                          {10},
+                          {10},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0}
+                         }) ).should_be(30)
+  end
 end
 
 spec:report(false)

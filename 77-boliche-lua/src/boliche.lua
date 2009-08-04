@@ -1,5 +1,6 @@
 function soma_jogadas(jogadas) 
   local soma = 0
+  if eh_strike(jogadas[4]) then return 60 end
 
   for posicao,jogada in pairs(jogadas) do
     soma = soma + valor_proprio(jogada)

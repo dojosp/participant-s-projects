@@ -1,8 +1,5 @@
-function soma_jogadas(jogadas)
-  if jogadas[1][1] == 1 then 
-    return jogadas[1][1]+jogadas[1][2] 
-  end
+function soma_jogadas(jogadas) 
 
-  return 0
+  return jogadas[1][1]+jogadas[1][2] 
 
 end

@@ -125,6 +125,21 @@ describe["Boliche"] = function()
                           {0,0}
                          }) ).should_be(18)
   end
+
+  it["strike na segunda e 2,2 na terceira e zero no resto deve dar 18"] = function()
+  	expect( soma_jogadas({{0,0},
+                          {10},
+                          {2,2},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0}
+                         }) ).should_be(18)
+  end
+
 end
 
 spec:report(false)

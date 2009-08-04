@@ -166,6 +166,7 @@ describe["Boliche"] = function()
                           0,0
                          }) ).should_be(60)
   end
+
   it["tudo strikes deve dar 300"] = function()
   	expect( soma_jogadas({10,
                           10,
@@ -178,6 +179,20 @@ describe["Boliche"] = function()
                           10,
                           10,10,10
                          }) ).should_be(300)
+  end
+
+  it["nao strikes no final"] = function()
+  	expect( soma_jogadas({0,0,
+                          0,0,
+                          0,0,
+                          0,0,
+                          0,0,
+                          0,0,
+                          0,0,
+                          0,0,
+                          7,0,
+                          5,2
+                         }) ).should_be(14)
   end
 end
 

@@ -85,7 +85,7 @@ describe["Boliche"] = function()
   end
 
  it["strike na primeira e 1 na segunda e zero no resto deve dar 12"] = function()
-  	expect( soma_jogadas({{10,0},
+  	expect( soma_jogadas({{10},
                           {1,0},
                           {0,0},
                           {0,0},
@@ -99,7 +99,7 @@ describe["Boliche"] = function()
   end
 
  it["strike na primeira e 2 na segunda e zero no resto deve dar 14"] = function()
-  	expect( soma_jogadas({{10,0},
+  	expect( soma_jogadas({{10},
                           {2,0},
                           {0,0},
                           {0,0},
@@ -110,6 +110,20 @@ describe["Boliche"] = function()
                           {0,0},
                           {0,0}
                          }) ).should_be(14)
+  end
+
+ it["strike na primeira e 2,2 na segunda e zero no resto deve dar 18"] = function()
+  	expect( soma_jogadas({{10},
+                          {2,2},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0}
+                         }) ).should_be(18)
   end
 end
 

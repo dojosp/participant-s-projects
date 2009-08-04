@@ -57,7 +57,32 @@ describe["Boliche"] = function()
                           {0,0}
                          }) ).should_be(4)
   end
-
+ it["segunda jogada 2 e 2, e resto zero deve ser 4"] = function()
+  	expect( soma_jogadas({{0,0},
+                          {2,2},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0}
+                         }) ).should_be(4)
+  end
+ it["segunda e terceira jogada 2 e 2, e resto zero deve ser 8"] = function()
+  	expect( soma_jogadas({{0,0},
+                          {2,2},
+                          {2,2},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0},
+                          {0,0}
+                         }) ).should_be(8)
+  end
 end
 
 spec:report(false)

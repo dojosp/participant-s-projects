@@ -57,14 +57,14 @@ describe KakeBowling do
 
   it "should add pins of next two rolls when strike at last frame" do
     KakeBowling.game([0,0,
-                      10,nil,
-                      1,2,
                       0,0,
                       0,0,
                       0,0,
                       0,0,
                       0,0,
                       0,0,
-                      0,0]).should be(16)
+                      0,0,
+                      0,0,
+                      10,2,3]).should be(15)
   end
 end

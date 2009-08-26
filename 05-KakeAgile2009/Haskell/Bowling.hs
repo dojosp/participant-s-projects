@@ -2,12 +2,12 @@ module Bowling where
 
 import Char
 
+bowlingScore [frame] = frameScore frame
 bowlingScore (frame:frames) = frameScore(frame) + bowlingScore(frames)
-bowlingScore [] = 0
 
 frameScore ['X', '-'] = 10
-frameScore [roll1, roll2] = (rollScore roll1) + (rollScore roll2)
+frameScore [roll1, roll2] = (convertToInt roll1) + (convertToInt roll2)
 frameScore _ = 0
 
-rollScore '-' = 0
-rollScore roll = (digitToInt roll)
+convertToInt '-' = 0
+convertToInt roll = (digitToInt roll)

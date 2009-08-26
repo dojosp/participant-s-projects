@@ -11,10 +11,16 @@ tests = TestList
         testAccumulatesFrameScores,
         testFrameScoreAddsEvenIfFirstNothing,
         testFrameScoreAddsEvenIfSecondIsNothing,
-        testFrameScoreWithAStrikeAndTheNextBeBlank
+		  testUnderstandsXAsMarkForStrike,
+		  testComputesBonusForStrike
         ]
 
-testFrameScoreWithAStrikeAndTheNextBeBlank = 
+testComputesBonusForStrike =
+	0~?= 0
+--	20 ~?= bowlingScore("X-" : "23" : (take 8 (repeat "--")))
+
+
+testUnderstandsXAsMarkForStrike = 
 	"frame score should be 10 when have a strike and a blank roll after" ~:
 	10 ~?= bowlingScore("X-" : (take 9(repeat "--")))
 

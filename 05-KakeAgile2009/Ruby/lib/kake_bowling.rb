@@ -1,5 +1,8 @@
 class KakeBowling
+
   def self.game pins
-    pins.first
+    result = 0
+    pins.each { |i| result += i }
+    result
   end
 end

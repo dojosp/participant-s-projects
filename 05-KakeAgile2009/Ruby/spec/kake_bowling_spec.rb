@@ -28,4 +28,17 @@ describe KakeBowling do
                       0,0,
                       0,0]).should be(1)
   end
+
+  it "should add all pins down and nothing else when no bonus" do
+    KakeBowling.game([1,2,
+                      3,4,
+                      0,5,
+                      1,3,
+                      2,5,
+                      4,4,
+                      1,0,
+                      0,4,
+                      3,1,
+                      2,6]).should be(51)
+  end
 end

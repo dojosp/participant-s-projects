@@ -3,6 +3,5 @@ module Bowling where
 bowlingScore (frame:frames) = frameScore(frame) + bowlingScore(frames)
 bowlingScore [] = 0
 
-frameScore "12" = 3
-frameScore "23" = 5
+frameScore [roll1, roll2] = (parseInt roll1) + (parseInt roll2)
 frameScore _ = 0

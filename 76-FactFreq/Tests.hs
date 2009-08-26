@@ -3,7 +3,8 @@ module Main where
 import Test.HUnit
 import FactFreq
 
-main = runTestTT testes
+--main = runTestTT testes
+main = putStr $ (show (contagem (fatorial 100))) ++ "\n"
 
 testes = TestList [
           testaFatorial

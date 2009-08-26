@@ -10,8 +10,13 @@ tests = TestList
         testOneSimpleFrame,
         testAccumulatesFrameScores,
         testFrameScoreAddsEvenIfFirstNothing,
-        testFrameScoreAddsEvenIfSecondIsNothing
+        testFrameScoreAddsEvenIfSecondIsNothing,
+        testFrameScoreWithAStrikeAndTheNextBeBlank
         ]
+
+testFrameScoreWithAStrikeAndTheNextBeBlank = 
+	"frame score should be 10 when have a strike and a blank roll after" ~:
+	10 ~?= bowlingScore("X-" : (take 9(repeat "--")))
 
 testFrameScoreAddsEvenIfSecondIsNothing = 
 	"frame score should add the first roll even if second is nothing" ~:

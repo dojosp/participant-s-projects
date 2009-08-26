@@ -5,6 +5,7 @@ import Char
 bowlingScore (frame:frames) = frameScore(frame) + bowlingScore(frames)
 bowlingScore [] = 0
 
+frameScore ['X', '-'] = 10
 frameScore [roll1, roll2] = (rollScore roll1) + (rollScore roll2)
 frameScore _ = 0
 

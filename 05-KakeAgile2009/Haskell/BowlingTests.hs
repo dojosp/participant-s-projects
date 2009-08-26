@@ -9,9 +9,14 @@ tests = TestList
         [testAllZeros,
         testOneSimpleFrame,
         testAccumulatesFrameScores,
-        testFrameScoreAddsEvenIfFirstNothing
+        testFrameScoreAddsEvenIfFirstNothing,
+        testFrameScoreAddsEvenIfSecondIsNothing
         ]
-        
+
+testFrameScoreAddsEvenIfSecondIsNothing = 
+	"frame score should add the first roll even if second is nothing" ~:
+	5 ~?= bowlingScore ("5-" : (take 9 (repeat "--")))
+
 testFrameScoreAddsEvenIfFirstNothing =
 	"frame score should add the second roll even if first is nothing" ~:
 	5 ~?= bowlingScore ("-5" : (take 9 (repeat "--")))

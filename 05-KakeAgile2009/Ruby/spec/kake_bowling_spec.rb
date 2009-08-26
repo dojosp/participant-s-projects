@@ -41,4 +41,30 @@ describe KakeBowling do
                       3,1,
                       2,6]).should be(51)
   end
+
+  it "should add pins of next two rolls when strike" do
+    KakeBowling.game([0,0,
+                      10,nil,
+                      1,2,
+                      0,0,
+                      0,0,
+                      0,0,
+                      0,0,
+                      0,0,
+                      0,0,
+                      0,0]).should be(16)
+  end
+
+  it "should add pins of next two rolls when strike at last frame" do
+    KakeBowling.game([0,0,
+                      0,0,
+                      0,0,
+                      0,0,
+                      0,0,
+                      0,0,
+                      0,0,
+                      0,0,
+                      0,0,
+                      10,2,3]).should be(15)
+  end
 end

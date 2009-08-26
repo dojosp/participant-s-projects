@@ -1,3 +1,19 @@
+require 'spec'
+
+require 'lib/kake_bowling'
+
 describe KakeBowling do
-  
+  it "should return 0 with all gutters" do
+    KakeBowling.game([0,0,
+                      0,0,
+                      0,0,
+                      0,0,
+                      0,0,
+                      0,0,
+                      0,0,
+                      0,0,
+                      0,0,
+                      0,0]).should be(0)
+  end
+
 end

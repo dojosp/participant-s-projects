@@ -5,12 +5,16 @@ class KakeBowling
     result = 0
     10.times do |frame|
       frame_position = frame*2
-      result += KakeBowling.score(pins, frame_position) + KakeBowling.score(pins, frame_position+1)
-      if pins[frame_position] == 10
-        result += (pins[(frame+1)*2] + pins[(frame+1)*2+1])
+      result += score(pins, frame_position) + score(pins, frame_position+1)
+      if got_strike(pins, frame_position)
+        result += (pins[frame_position+2] + pins[frame_position+2+1])
       end
     end
     result
+  end
+
+  def self.got_strike(pins, pos)
+    pins[pos] == 10
   end
 
   def self.score(pins, rollIndex)

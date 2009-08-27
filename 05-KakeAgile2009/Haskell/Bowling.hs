@@ -2,12 +2,18 @@ module Bowling where
 
 import Char
 
-bowlingScore [frame] = frameScore frame
-bowlingScore (frame:frames) = frameScore(frame) + bowlingScore(frames)
+bowlingScore :: [String] -> Int
+bowlingScore [frame] = pinsKnocked frame
+bowlingScore (frame : (nextFrame : frames)) =
+	(frameScore frame nextFrame) + (bowlingScore (nextFrame : frames))
 
-frameScore ['X', '-'] = 10
-frameScore [roll1, roll2] = (convertToInt roll1) + (convertToInt roll2)
-frameScore _ = 0
+frameScore :: String -> String -> Int
+frameScore ['X', '-'] nextFrame = 10 + pinsKnocked nextFrame
+frameScore frame nextFrame = pinsKnocked frame
+
+pinsKnocked :: String -> Int
+pinsKnocked [roll1, roll2] = (convertToInt roll1) + (convertToInt roll2)
+pinsKnocked _ = 16
 
 convertToInt '-' = 0
 convertToInt roll = (digitToInt roll)

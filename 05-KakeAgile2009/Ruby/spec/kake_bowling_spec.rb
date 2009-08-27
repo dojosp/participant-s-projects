@@ -65,6 +65,7 @@ describe KakeBowling do
                       0,0,
                       0,0,
                       0,0,
-                      10,2,3]).should be(15)
+                      10,nil,
+                      2,3]).should be(15)
   end
 end

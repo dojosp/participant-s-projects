@@ -1,11 +1,15 @@
 class KakeBowling
-  
+  include Enumerable
+
   def self.game pins
     result = 0
-    pins.each_with_index do |roll, index|
-      result += roll if (!roll.nil? && index < 20)
-      if roll == 10
-        result += (pins[index+2] + pins[index+3])
+    10.times do |frame|
+      roll1 = pins[frame*2]
+      roll2 = pins[frame*2+1]
+      result += roll1 if !roll1.nil?
+      result += roll2 if !roll2.nil?      
+      if roll1 == 10
+        result += (pins[(frame+1)*2] + pins[(frame+1)*2+1])
       end
     end
     result

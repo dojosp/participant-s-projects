@@ -9,9 +9,20 @@ public class Bowling {
 
 	public Integer getScore() {
 		int result = 0;
-		for (int i=0; i<10;i++)
-			result += rounds[i];
+		int beginningOfFrame = 0;
+		
+		while (beginningOfFrame < 20) {
+			result += rounds[beginningOfFrame] + rounds [beginningOfFrame + 1];
+			if(spare(beginningOfFrame))
+				result += rounds[beginningOfFrame + 2];
+			beginningOfFrame += 2;
+		}
 		return result;
+	}
+
+	private boolean spare(int beginningOfFrame) {
+		return rounds[beginningOfFrame] + rounds[beginningOfFrame+1] == 10;
+		
 	}
 
 }

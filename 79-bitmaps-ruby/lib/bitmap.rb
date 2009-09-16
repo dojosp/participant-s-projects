@@ -15,8 +15,11 @@ class Bitmap
     @bitmap.first.first.to_s
   end
 
-  def heterogeneo?
-    false
-  end
+  private
+
+    def heterogeneo?
+      return true if @bitmap.first.size > 1
+      false
+    end
 
 end

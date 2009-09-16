@@ -62,9 +62,18 @@ describe Bitmap do
   end
 
   describe 'heterogeneo' do
+    before :each do
+      Bitmap.send :public, :heterogeneo?
+    end
+
     it "deve reconhecer bitmap de 1 bit como não heterogeneo" do
       b = Bitmap.new [[1]]
-      b.heterogeneo?.should == false
+      b.should_not be_heterogeneo
+    end
+
+    it "deve reconhecer bitmap de 2 bits diferentes como heterogeneo" do
+      b = Bitmap.new [[1, 0]]
+      b.should be_heterogeneo
     end
   end
 end

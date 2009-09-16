@@ -25,5 +25,10 @@ describe Bitmap do
       b = Bitmap.new [[0]]
       b.comprimir.should == 0
     end
+
+    it "deve saber comprimir um mapa de 2 caracter iguais" do
+      b = Bitmap.new [[0,0]]
+      b.comprimir.should == 0
+    end
   end
 end

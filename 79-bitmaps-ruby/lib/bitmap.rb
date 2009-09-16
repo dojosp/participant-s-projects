@@ -12,6 +12,11 @@ class Bitmap
       return 'D01' if @bitmap.first.first == 0
       return 'D10'
     end
-    @bitmap.first.first
+    @bitmap.first.first.to_s
   end
+
+  def heterogeneo?
+    false
+  end
+
 end

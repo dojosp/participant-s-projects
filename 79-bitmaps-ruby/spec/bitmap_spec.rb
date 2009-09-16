@@ -26,9 +26,19 @@ describe Bitmap do
       b.comprimir.should == 0
     end
 
-    it "deve saber comprimir um mapa de 2 caracter iguais" do
+    it "deve saber comprimir um mapa de 2 caracter iguais 00" do
       b = Bitmap.new [[0,0]]
       b.comprimir.should == 0
+    end
+
+    it "deve saber comprimir um mapa de 2 caracter iguais 11" do
+      b = Bitmap.new [[1,1]]
+      b.comprimir.should == 1
+    end
+
+    it "deve saber comprimir um mapa de 2 caracter diferente 01" do
+      b = Bitmap.new [[0,1]]
+      b.comprimir.should == 'D01'
     end
   end
 end

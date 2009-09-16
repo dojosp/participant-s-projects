@@ -18,7 +18,8 @@ class Bitmap
   private
 
     def heterogeneo?
-      return true if @bitmap.first.size > 1
+      return true if @bitmap.first.size == 2 &&
+                     @bitmap.first.first != @bitmap.first[1]
       false
     end
 

@@ -75,5 +75,15 @@ describe Bitmap do
       b = Bitmap.new [[1, 0]]
       b.should be_heterogeneo
     end
+
+    it "deve reconhecer bitmap de 2 bits diferentes comecando com 0 como heterogeneo" do
+      b = Bitmap.new [[0, 1]]
+      b.should be_heterogeneo
+    end
+
+    it "deve reconhecer bitmap de 2 bits iguais como nao heterogeneo" do
+      b = Bitmap.new [[0, 0]]
+      b.should_not be_heterogeneo
+    end
   end
 end

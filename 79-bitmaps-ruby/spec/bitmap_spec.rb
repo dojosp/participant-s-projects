@@ -42,7 +42,6 @@ describe Bitmap do
     end
 
     it "deve saber comprimir um mapa de 2 caracter diferente 10" do
-      pending
       b = Bitmap.new [[1,0]]
       b.comprimir.should == 'D10'
     end

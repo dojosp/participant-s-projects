@@ -8,14 +8,7 @@ class Bitmap
   end
 
   def comprimir
-    if @bitmap.first.size == 1
-      @bitmap.first.first
-    else @bitmap.first.size == 2
-      if @bitmap.first.first == @bitmap.first[1]
-        @bitmap.first.first
-      else
-        'D01'
-      end
-    end
+    return 'D01' if @bitmap.first[1] && @bitmap.first.first != @bitmap.first[1]
+    @bitmap.first.first
   end
 end

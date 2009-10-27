@@ -4,8 +4,7 @@ class Regex
   end
 
   def aceita? string
-    return true if @regex.empty?
-    string == @regex
+    string == @regex or @regex.empty?
   end
 
 end

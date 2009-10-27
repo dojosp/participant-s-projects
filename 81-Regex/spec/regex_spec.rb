@@ -19,6 +19,10 @@ describe Regex do
       r = Regex.new("a")
       r.should be_aceita "a"
     end
+    it "se a regex for 'a' não deve aceitar uma string 'b'" do
+      r = Regex.new("a")
+      r.should_not be_aceita "b"
+    end
   end
 end
 

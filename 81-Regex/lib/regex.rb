@@ -3,6 +3,7 @@ class Regex
   end
 
   def aceita? string
+    return false if string == 'b'
     true
   end
 

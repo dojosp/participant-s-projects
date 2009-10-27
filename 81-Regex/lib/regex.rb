@@ -5,7 +5,11 @@ class Regex
 
   def aceita? palavra
     letras = palavra.split("")
-    letras[0] == @regex or letras[1] == @regex or @regex.empty?
+    aceita = @regex.empty?
+    letras.each do |letra|
+      aceita ||= letra == @regex
+    end
+    aceita
   end
 end
 

@@ -6,6 +6,11 @@ describe Regex do
       r = Regex.new("")
       r.should be_aceita ""
     end
+
+    it "deve aceitar uma string 'ola'" do
+      r = Regex.new("")
+      r.should be_aceita "ola"
+    end
   end
 end
 

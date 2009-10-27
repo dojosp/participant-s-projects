@@ -12,5 +12,13 @@ describe Regex do
       r.should be_aceita "ola"
     end
   end
+
+  context "caracter" do
+
+    it "se a regex for 'a' deve aceitar uma string 'a'" do
+      r = Regex.new("a")
+      r.should be_aceita "a"
+    end
+  end
 end
 

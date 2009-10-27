@@ -40,5 +40,22 @@ describe Regex do
       @r.should be_aceita "ba"
     end
   end
+
+  context "concatenacao ab" do
+    before :each do
+      @r = Regex.new "ab"
+    end
+
+    it "deve aceitar 'ab'" do
+      @r.should be_aceita "ab"
+    end
+
+
+    it "não deve aceitar 'ba'" do
+      pending do
+        @r.should_not be_aceita "ba"
+      end
+    end
+  end
 end
 

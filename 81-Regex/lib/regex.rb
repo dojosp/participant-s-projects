@@ -3,9 +3,9 @@ class Regex
     @regex = regex
   end
 
-  def aceita? string
-    string == @regex or @regex.empty?
+  def aceita? palavra
+    letras = palavra.split("")
+    letras[0] == @regex or @regex.empty?
   end
-
 end
 

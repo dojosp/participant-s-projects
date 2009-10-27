@@ -27,6 +27,11 @@ describe Regex do
       r = Regex.new("a")
       r.should_not be_aceita "c"
     end
+    it "se a regex for 'a' deve aceitar uma string 'ab'" do
+      r = Regex.new("a")
+      r.should be_aceita "ab"
+    end
+
   end
 end
 

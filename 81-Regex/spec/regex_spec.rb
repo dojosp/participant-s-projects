@@ -53,6 +53,32 @@ describe Regex do
     it "não deve aceitar 'ba'" do
       @r.should_not be_aceita "ba"
     end
+
+    it "deve aceitar 'acab'" do
+      @r.should be_aceita "acab"
+    end
+
+    it "deve aceitar 'abac'" do
+      @r.should be_aceita "abac"
+    end
+
+    it "não deve aceitar 'a'" do
+      @r.should_not be_aceita "a"
+    end
+  end
+
+  context "concatenacao abc" do
+    before :each do
+      @r = Regex.new "abc"
+    end
+
+    it "deveria aceitar abc" do
+      @r.should be_aceita "abc"
+    end
+
+    it "nao deveria aceitar auc" do
+      @r.should_not be_aceita "auc"
+    end
   end
 end
 

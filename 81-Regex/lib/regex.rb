@@ -4,7 +4,7 @@ class Regex
   end
 
   def aceita? palavra
-    return true if @regex == "ab"
+    return true if @regex == palavra
     letras = palavra.split("")
 
     aceita = @regex.empty?

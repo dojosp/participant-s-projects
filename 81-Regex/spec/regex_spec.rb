@@ -50,11 +50,8 @@ describe Regex do
       @r.should be_aceita "ab"
     end
 
-
     it "não deve aceitar 'ba'" do
-      pending do
-        @r.should_not be_aceita "ba"
-      end
+      @r.should_not be_aceita "ba"
     end
   end
 end

@@ -4,19 +4,13 @@ class Regex
   end
 
   def regex_inteira? palavra
-    letras_regex = @regex.split("")
-    letras_batidas = 0
-    while palavra[letras_batidas] == letras_regex[letras_batidas] and
-          letras_batidas < letras_regex.size
-      letras_batidas += 1
-    end
-    letras_batidas == letras_regex.size
+    @regex == palavra.join
   end
 
   def aceita? palavra
     letras = palavra.split("")
     letras.each_with_index do |letra_palavra, indice|
-      return true if regex_inteira? letras[indice .. -1]
+      return true if regex_inteira? letras[indice ... (indice + @regex.size)]
     end
     @regex == palavra
   end

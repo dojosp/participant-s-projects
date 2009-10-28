@@ -7,23 +7,19 @@ class Regex
     letras = palavra.split("")
 
     letras_regex = @regex.split("")
-    primeira = letras_regex[0]
 
-
-
-    aceita = @regex.empty?
-    letras.each_with_index do |letra, indice|
-      if letra == primeira
-        if(letras_regex.size >= 2)
-          segunda = letras_regex[1]
-          aceita ||= letras[indice+1] == segunda
-        else
-          aceita = true
-        end
+    letras.each_with_index do |letra_palavra, indice|
+      letras_batidas = 0
+      while letras[indice+letras_batidas] == letras_regex[letras_batidas] and
+            letras_batidas < letras_regex.size
+        letras_batidas+=1
+      end
+      if letras_batidas == letras_regex.size
+        return true
       end
     end
 
-    aceita
+    @regex == palavra
   end
 end
 

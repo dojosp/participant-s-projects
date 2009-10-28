@@ -79,6 +79,10 @@ describe Regex do
     it "nao deveria aceitar auc" do
       @r.should_not be_aceita "auc"
     end
+
+    it "nao deveria aceitar abd" do
+      @r.should_not be_aceita "abd"
+    end
   end
 end
 

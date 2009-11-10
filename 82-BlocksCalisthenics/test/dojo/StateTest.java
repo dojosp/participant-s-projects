@@ -23,4 +23,11 @@ public class StateTest {
 		State equalState = new State();
 		assertEquals(state, equalState);
 	}
+	
+	@Test
+	public void emptyStateShouldNotEqualNotEmptyState() throws Exception {
+		State emptyState = new State();
+		State state = new State(new Pile());
+		assertFalse(emptyState.equals(state));
+	}
 }

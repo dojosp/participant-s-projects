@@ -30,4 +30,11 @@ public class StateTest {
 		State state = new State(new Pile());
 		assertFalse(emptyState.equals(state));
 	}
+	
+	@Test
+	public void stateWithOneBlock0ShouldNotEqualStateWithOneBlock1() throws Exception {
+		State stateWithOneBlock0 = new State(new Pile(new Block(new Label(0))));
+		State stateWithOneBlock1 = new State(new Pile(new Block(new Label(1))));
+		assertFalse(stateWithOneBlock0.equals(stateWithOneBlock1));
+	}
 }

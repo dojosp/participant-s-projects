@@ -1,8 +1,7 @@
 package dojo;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class WorldTest {
@@ -12,7 +11,7 @@ public class WorldTest {
 		new World(new Size(10));
 	}
 	
-	@Test @Ignore("need to have equals on state")
+	@Test
 	public void stateOfTheNewWorldShouldBeFlat() throws Exception {
 		World world = new World(new Size(1));
 		State expected = new State(new Pile(new Block(new Label(1))));

@@ -1,18 +1,20 @@
 package dojo;
 
-public class State {
+import java.util.Arrays;
+import java.util.List;
 
-	private Size size;
-	
-	public State(Pile... piles) {
-		size = new Size(piles.length);
+public class State {
+	private List<Pile> piles;
+
+	public State(Pile... arrayOfPiles) {
+		piles = Arrays.asList(arrayOfPiles);
 	}
 
 	@Override
 	public boolean equals(Object object) {
-		State otherState = (State)object;
-		Size otherSize = otherState.size;
-		
-		return otherSize.equals(size);
+		State otherState = (State) object;
+		List<Pile> otherPiles = otherState.piles;
+
+		return otherPiles.equals(piles);
 	}
 }

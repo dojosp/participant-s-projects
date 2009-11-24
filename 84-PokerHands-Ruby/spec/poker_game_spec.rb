@@ -19,4 +19,16 @@ describe PokerGame do
      game.stronger_game(:three_of_kind, :two_pairs).should == :three_of_kind
      game.stronger_game(:two_pairs, :three_of_kind).should == :three_of_kind
   end
+
+  it "should know that straight is stronger than three of kind" do
+     game = PokerGame.new
+     game.stronger_game(:three_of_kind, :straight).should == :straight
+     game.stronger_game(:straight, :three_of_kind).should == :straight
+  end
+
+  it "should know that flush is stronger than straight" do
+     game = PokerGame.new
+     game.stronger_game(:flush, :straight).should == :flush
+     game.stronger_game(:straight, :flush).should == :flush
+  end
 end

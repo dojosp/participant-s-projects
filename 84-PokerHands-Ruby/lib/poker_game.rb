@@ -1,6 +1,7 @@
 class PokerGame
   def initialize
-    @order = [:highest_card, :one_pair, :two_pairs, :three_of_kind]
+    @order = [:highest_card, :one_pair, :two_pairs, :three_of_kind,
+              :straight, :flush]
   end
 
   def stronger_game(game1, game2)

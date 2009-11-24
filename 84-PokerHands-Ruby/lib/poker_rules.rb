@@ -6,12 +6,18 @@ class PokerRules
   @@card_order = [:two, :three, :four, :five, :six, :seven, :eight,
                   :nine, :ten, :jack, :queen, :king, :ace]
 
+  @@suit_order = [:clubs, :hearts, :spades, :diamonds]
+
   def self.stronger_game(game1, game2)
     self.stronger_in_list(@@game_order, game1, game2)
   end
 
   def self.stronger_card(card1, card2)
     self.stronger_in_list(@@card_order, card1, card2)
+  end
+
+  def self.stronger_suit(suit1, suit2)
+    self.stronger_in_list(@@suit_order, suit1, suit2)
   end
 
   private

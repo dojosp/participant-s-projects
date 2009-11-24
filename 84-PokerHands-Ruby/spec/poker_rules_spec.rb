@@ -101,4 +101,19 @@ describe PokerRules do
     PokerRules.stronger_card(:king, :ace).should == :ace
     PokerRules.stronger_card(:ace, :king).should == :ace
   end
+
+  it "should know that hearts is stronger than clubs" do
+    PokerRules.stronger_suit(:hearts, :clubs).should == :hearts
+    PokerRules.stronger_suit(:clubs, :hearts).should == :hearts
+  end
+
+  it "should know that spades is stronger than hearts" do
+    PokerRules.stronger_suit(:hearts, :spades).should == :spades
+    PokerRules.stronger_suit(:spades, :hearts).should == :spades
+  end
+
+  it "should know that diamonds is stronger than spades" do
+    PokerRules.stronger_suit(:diamonds, :spades).should == :diamonds
+    PokerRules.stronger_suit(:spades, :diamonds).should == :diamonds
+  end
 end

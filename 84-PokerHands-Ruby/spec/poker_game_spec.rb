@@ -31,4 +31,22 @@ describe PokerGame do
      game.stronger_game(:flush, :straight).should == :flush
      game.stronger_game(:straight, :flush).should == :flush
   end
+
+  it "should know that full house is stronger than flush" do
+     game = PokerGame.new
+     game.stronger_game(:flush, :full_house).should == :full_house
+     game.stronger_game(:full_house, :flush).should == :full_house
+  end
+
+  it "should know that four of a kind is stronger than full house" do
+     game = PokerGame.new
+     game.stronger_game(:four_of_kind, :full_house).should == :four_of_kind
+     game.stronger_game(:full_house, :four_of_kind).should == :four_of_kind
+  end
+
+  it "should know that straight flush is stronger than four of a kind" do
+     game = PokerGame.new
+     game.stronger_game(:four_of_kind, :straight_flush).should == :straight_flush
+     game.stronger_game(:straight_flush, :four_of_kind).should == :straight_flush
+  end
 end

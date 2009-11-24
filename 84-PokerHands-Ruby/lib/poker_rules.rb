@@ -1,5 +1,5 @@
 class PokerRules
-  @@order = [:highest_card, :one_pair, :two_pairs, :three_of_kind,
+  @@game_order = [:highest_card, :one_pair, :two_pairs, :three_of_kind,
              :straight, :flush, :full_house, :four_of_kind,
              :straight_flush]
 
@@ -7,14 +7,17 @@ class PokerRules
                   :nine, :ten, :jack, :queen, :king, :ace]
 
   def self.stronger_game(game1, game2)
-    game1order = @@order.index(game1)
-    game2order = @@order.index(game2)
-    @@order[[game1order, game2order].max]
+    self.stronger_in_list(@@game_order, game1, game2)
   end
 
   def self.stronger_card(card1, card2)
-    card1order = @@card_order.index(card1)
-    card2order = @@card_order.index(card2)
-    @@card_order[[card1order, card2order].max]
+    self.stronger_in_list(@@card_order, card1, card2)
+  end
+
+  private
+  def self.stronger_in_list(list, item1, item2)
+    item1order = list.index(item1)
+    item2order = list.index(item2)
+    list[[item1order, item2order].max]
   end
 end

@@ -1,5 +1,9 @@
 class PokerMatcher
   def self.recognize(hand)
-    :highest_card
+    if(hand[0][0] == hand[1][0])
+      :one_pair
+    else
+      :highest_card
+    end
   end
 end

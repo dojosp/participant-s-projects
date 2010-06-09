@@ -1,3 +1,5 @@
 old-dojo
 .DS_Store
 Icon?
+*.o
+*.hi

@@ -1,0 +1,3 @@
+O objetivo deste Coding Dojo, em que o Yahoo! Brasil cedeu o espaco em 19/01/2011, era apresentar uma linguagem nova para os participantes.
+O desenvolvimento foi feito em Erlang.
+O problema escolhido foi implementar um ROT-13, uma cifra de César.

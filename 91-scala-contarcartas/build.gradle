@@ -1,0 +1,26 @@
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+apply plugin: 'scala'
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+
+version = '1.0-SNAPSHOT'
+
+scalaVersion = '2.9.2'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	
+	runtime 'org.scala-lang:scala-library:' + scalaVersion
+	testRuntime 'junit:junit:4.10'
+	
+	scalaTools 'org.scala-lang:scala-compiler:' + scalaVersion
+	scalaTools 'org.scala-lang:scala-library:' + scalaVersion
+}
+
+
+
